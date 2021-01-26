@@ -1,0 +1,15 @@
+# macOS
+.DS_Store
+
+# npm
+node_modules/
+package-lock.json
+
+# frontend output
+public/
+
+# deploy
+pai-dan-system.zip
+
+# JetBrains
+.idea/
