@@ -1,0 +1,43 @@
+@import '../../../../styling/color.styl'
+
+$input-background = #dfe5ea
+
+.edit-modal
+	.ant-modal-close-x
+		display: none
+
+	.ant-modal-body
+		padding-bottom: 16px
+
+	&__header
+		display: flex
+		margin-bottom: 7px
+
+	&__title
+		margin-left: 8px
+		font-size: 16px
+		font-weight: 500
+		color: $black
+
+	&__form-item
+		input
+			background: $input-background
+			font-family: PingFangSC
+
+	&__footer
+		text-align: right
+
+	&__cancel-btn
+		margin-right: 10px
+		border-radius: 5px;
+		background: $grey;
+
+		&:hover, &:active, &:focus
+			background: $grey
+
+	&__submit-btn
+		border-radius: 5px;
+		background: $blue;
+
+		&:hover, &:active, &:focus
+			background: $blue

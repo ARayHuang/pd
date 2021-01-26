@@ -1,0 +1,231 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`tag delete /api/v1/tags/id=:tagId 204 no content 1`] = `Object {}`;
+
+exports[`tag delete /api/v1/tags/id=:tagId 404 no content 1`] = `
+Object {
+  "code": "888.004.404",
+  "message": "找不到标签",
+  "type": "NotFoundError",
+}
+`;
+
+exports[`tag delete /api/v1/tags/id=:tagId 422 invalid tagId 1`] = `
+Object {
+  "code": "888.004.422",
+  "fields": Array [
+    "tagId",
+  ],
+  "message": "输入格式错误",
+  "type": "RequestValidationError",
+}
+`;
+
+exports[`tag get /api/v1/tags 200 ok 1`] = `
+Object {
+  "data": Any<Array>,
+  "numOfItems": 11,
+  "numOfPages": 1,
+}
+`;
+
+exports[`tag get /api/v1/tags 200 ok 2`] = `
+Object {
+  "backgroundColor": "FBC8D9",
+  "fontColor": "CD349D",
+  "id": Any<String>,
+  "name": "标签一",
+  "status": "active",
+}
+`;
+
+exports[`tag get /api/v1/tags 200 ok 3`] = `
+Object {
+  "backgroundColor": "FFC1A9",
+  "fontColor": "D63E03",
+  "id": Any<String>,
+  "name": "标签二",
+  "status": "active",
+}
+`;
+
+exports[`tag get /api/v1/tags 200 ok 4`] = `
+Object {
+  "backgroundColor": "FFDEAD",
+  "fontColor": "AC6802",
+  "id": Any<String>,
+  "name": "标签三",
+  "status": "active",
+}
+`;
+
+exports[`tag get /api/v1/tags 200 ok 5`] = `
+Object {
+  "backgroundColor": "ADE0F8",
+  "fontColor": "0E61B0",
+  "id": Any<String>,
+  "name": "标签四",
+  "status": "active",
+}
+`;
+
+exports[`tag get /api/v1/tags 200 ok 6`] = `
+Object {
+  "backgroundColor": "C2E49E",
+  "fontColor": "3A6B07",
+  "id": Any<String>,
+  "name": "标签五",
+  "status": "active",
+}
+`;
+
+exports[`tag get /api/v1/tags 200 ok 7`] = `
+Object {
+  "backgroundColor": "E0C3FF",
+  "fontColor": "6820B5",
+  "id": Any<String>,
+  "name": "标签六",
+  "status": "active",
+}
+`;
+
+exports[`tag get /api/v1/tags 200 ok 8`] = `
+Object {
+  "backgroundColor": "97DFCE",
+  "fontColor": "018062",
+  "id": Any<String>,
+  "name": "标签七",
+  "status": "active",
+}
+`;
+
+exports[`tag get /api/v1/tags 200 ok 9`] = `
+Object {
+  "backgroundColor": "D5C3A2",
+  "fontColor": "775310",
+  "id": Any<String>,
+  "name": "标签八",
+  "status": "active",
+}
+`;
+
+exports[`tag get /api/v1/tags 200 ok 10`] = `
+Object {
+  "backgroundColor": "D9DE82",
+  "fontColor": "858106",
+  "id": Any<String>,
+  "name": "标签九",
+  "status": "active",
+}
+`;
+
+exports[`tag get /api/v1/tags 200 ok 11`] = `
+Object {
+  "backgroundColor": "B9C8F9",
+  "fontColor": "2636D8",
+  "id": Any<String>,
+  "name": "标签十",
+  "status": "active",
+}
+`;
+
+exports[`tag get /api/v1/tags 200 ok 12`] = `
+Object {
+  "backgroundColor": "d4dbe1",
+  "fontColor": "000000",
+  "id": Any<String>,
+  "name": "隐藏标签",
+  "status": "disabled",
+}
+`;
+
+exports[`tag get /api/v1/tags 422 invalid sort 1`] = `
+Object {
+  "code": "888.004.422",
+  "fields": Array [
+    "sort",
+  ],
+  "message": "输入格式错误",
+  "type": "RequestValidationError",
+}
+`;
+
+exports[`tag get /api/v1/tags/id=:tagId 200 ok 1`] = `
+Object {
+  "backgroundColor": "FBC8D9",
+  "fontColor": "CD349D",
+  "id": Any<String>,
+  "name": "标签一",
+  "status": "active",
+}
+`;
+
+exports[`tag get /api/v1/tags/id=:tagId 404 tag not found 1`] = `
+Object {
+  "code": "888.004.404",
+  "message": "找不到标签",
+  "type": "NotFoundError",
+}
+`;
+
+exports[`tag get /api/v1/tags/id=:tagId 422 invalid tagId 1`] = `
+Object {
+  "code": "888.004.422",
+  "fields": Array [
+    "tagId",
+  ],
+  "message": "输入格式错误",
+  "type": "RequestValidationError",
+}
+`;
+
+exports[`tag post /api/v1/tags 201 created 1`] = `
+Object {
+  "backgroundColor": "00FF00",
+  "fontColor": "00FF00",
+  "id": Any<String>,
+  "name": "測試標籤",
+  "status": "active",
+}
+`;
+
+exports[`tag post /api/v1/tags 409 conflict 1`] = `
+Object {
+  "code": "888.004.409",
+  "message": "标签已存在",
+  "type": "ConflictError",
+}
+`;
+
+exports[`tag post /api/v1/tags 422 invalid backgroundColor 1`] = `
+Object {
+  "code": "888.004.422",
+  "fields": Array [
+    "backgroundColor",
+    "backgroundColor",
+  ],
+  "message": "输入格式错误",
+  "type": "RequestValidationError",
+}
+`;
+
+exports[`tag put /api/v1/tags/id=:tagId 204 no content 1`] = `Object {}`;
+
+exports[`tag put /api/v1/tags/id=:tagId 404 tag not found 1`] = `
+Object {
+  "code": "888.004.404",
+  "message": "找不到标签",
+  "type": "NotFoundError",
+}
+`;
+
+exports[`tag put /api/v1/tags/id=:tagId 422 invalid tagId 1`] = `
+Object {
+  "code": "888.004.422",
+  "fields": Array [
+    "tagId",
+  ],
+  "message": "输入格式错误",
+  "type": "RequestValidationError",
+}
+`;

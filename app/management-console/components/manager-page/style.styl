@@ -1,0 +1,39 @@
+@import '../../lib/styling/color'; 
+
+.manager-page
+	background-color: $white
+	padding: 24px 32px 49px 43px
+	.ljit-form
+		.ant-row-flex
+			display: block
+
+	&__account-info
+		.ant-table-small > .ant-table-content > .ant-table-body > table > .ant-table-thead > tr
+			&,
+			& > th
+				border-bottom: 0
+
+	.header-button-bar__pool
+		margin-bottom: 15px
+
+	&__submit-form-modal
+		.ant-modal-body
+			padding: 36px 103px 15px 0
+		label
+			color: $black
+			font-weight: 400
+			&::before
+				content: ''
+		.ljit-label-text
+			margin-left: 12%
+			margin-bottom: 19px
+
+	&__left
+		.ant-form-item-control-wrapper
+			width: calc(100% - 43px)
+		.ant-form-item-label
+			width: 43px
+
+	.ljit-form-reset-btn
+		margin-left: 25px
+		margin-bottom: 12px

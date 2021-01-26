@@ -1,0 +1,22 @@
+@import '../../../styling/color.styl'
+
+$comment-body-height = 120px
+
+.order-comments
+	position: relative
+
+	&__body
+		height: $comment-body-height
+		overflow-y: auto
+
+	&.whole-height
+		.order-comments__body
+			display: flex
+			align-items: center
+			justify-content: center
+
+	&__title
+		color: $black
+		font-size: 14px
+		font-weight: 500
+		margin-bottom: 15px

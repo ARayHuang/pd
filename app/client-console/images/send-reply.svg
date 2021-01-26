@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<title>lcon/24/send-message</title>
+	<g id="lcon/24/send-message" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+		<g transform="translate(12.000000, 12.000000) rotate(-270.000000) translate(-12.000000, -12.000000) translate(2.000000, 2.000000)">
+			<path d="M10.5882353,0.999818198 L10.5882353,16.9685942 L9.62600607,18.091028 L1.35674136,19.9101912 C0.531793333,20.2911575 -0.298425274,19.3884047 0.105299074,18.5494135 L8.76536209,0.552685907 C8.9426645,0.184228636 9.28433528,0 9.62600607,0 L10.5882353,0.999818198 Z" id="Path" fill="#9AB4EB"></path>
+			<path d="M9.41176471,0 C9.78758939,0 10.1634141,0.184228636 10.3584399,0.552685907 L19.8841751,18.5494135 C20.3282563,19.3884047 19.4150479,20.2911575 18.5076369,19.9101912 L9.41176471,18.091028 L9.41176471,0 Z" id="secondary" fill="#4C63B6" fill-rule="nonzero"></path>
+		</g>
+	</g>
+</svg>

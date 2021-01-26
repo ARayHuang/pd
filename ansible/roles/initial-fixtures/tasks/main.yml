@@ -1,0 +1,4 @@
+- name: Initial fixtures
+  shell: NODE_ENV={{ env }} node . init
+  args:
+    chdir: ~/pai-dan-system

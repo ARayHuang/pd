@@ -1,0 +1,42 @@
+@import '../../../../../styling/color.styl';
+
+.comment-submit-form
+	&.disabled
+		background: #f5f5f5
+
+	.ljit-form
+		border: 0
+		padding: 0
+		display: flex
+		background: none
+		align-items: center
+		border: 1px solid $ivory-grey
+		border-radius: 6px
+
+		.ljit-form-label
+			flex: 2
+			margin-bottom: 0
+
+		.ant-col
+			width: 100%
+
+		.ant-input
+			background: none
+			border: 0
+			&:focus
+				box-shadow: 0 0 0 0 $white
+
+		.ant-form-explain
+			position: absolute
+			margin-top: 2px
+		
+		textarea
+			resize: none
+
+	&__btn-submit.ljit-btn
+		background: none
+		border: 0
+		padding: 0
+		width: 24px
+		height: 24px
+		margin-right: 10px

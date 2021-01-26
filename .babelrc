@@ -1,0 +1,30 @@
+{
+	"presets": [
+		"@babel/preset-env",
+		"@babel/preset-react"
+	],
+	"plugins": [
+		["import", {
+			"libraryName": "antd",
+			"style": "css",
+			"libraryDirectory": "es"
+		}],
+		"@babel/syntax-dynamic-import"
+	],
+	"env": {
+		"test": {
+			"presets": [
+				[
+					"@babel/preset-env",
+					{
+						"modules": "commonjs",
+						"targets": {
+							"node": "current"
+						}
+					}
+				],
+				"@babel/preset-react"
+			]
+		}
+	},
+}

@@ -1,0 +1,34 @@
+@import '../../styling/color.styl';
+
+.dropdown-buttons
+	margin-right: 12px
+	color: $white
+	border-radius: 6px
+	font-size: 16px
+	width: 88px
+	background-color: $grey
+	padding: 7px 26px
+	cursor: pointer
+
+	&--menu
+		.ljit-menu
+			width: 88px
+			border-radius: 4px
+			box-shadow: 0 0 8px 0 rgba($black, 50%)
+			text-align: center
+
+			&__item
+				padding: 0px !important
+			> .ant-menu-item-active
+				background-color: $blue
+				color: $white
+			li
+				font-size: 16px
+				height: 32px
+				&:first-child
+					margin: 8px 0 0 0
+				span
+					position: relative
+					top: -4px
+				& + li
+					margin: 0 0 8px 0

@@ -1,0 +1,165 @@
+@import '../../../styling/color.styl'
+@import '../../../styling/button.styl'
+@import '../../../styling/height.styl'
+
+$tab-title-color = $light-grey
+$tab-title-active-color = $blue
+$pagination-height = 48px
+$order-lists-height = $order-list-track-saving-height + $pagination-height
+
+.order-list-page
+	background: none
+	padding: 0
+
+	.ljit-layout-content
+		height: "calc(%s - %s)" % ($order-list-total-height $order-list-title-and-padding-height)
+		max-height: "calc(%s - %s)" % ($order-list-total-height $order-list-title-and-padding-height)
+		min-height: $adjust-screen-min-height - $order-list-title-and-padding-height
+		border-radius: 12px
+		background-color: $white
+		@media only screen and (min-height: $adjust-screen-max-height + 1px)
+			max-height: $adjust-screen-max-height - $order-list-title-and-padding-height
+
+	&__tabs-list
+		border-bottom-left-radius: 12px
+		border-bottom-right-radius: 12px
+
+		.ant-tabs-bar
+			background-color: $white
+			margin-bottom: 0
+			padding: 15px 24px 0
+			border-top-left-radius: 12px
+			border-top-right-radius: 12px
+
+	&__tabs-title
+		display: flex
+		align-items: center
+
+		.ljit-badge
+			margin-left: 2px
+
+	.ant-tabs-nav
+		width: 100%
+
+	.ant-tabs-tab[role='tab']
+		& + .ant-tabs-tab[role='tab']
+			margin-left: 40px
+
+		&,
+		&.ant-tabs-tab-active
+			margin: 0
+			border-radius: 0
+			border: 0
+			flex: auto
+			font-size: 16px
+			padding: 0 0 14px
+			color: $tab-title-color
+
+	.ljit-tabs > .ant-tabs-bar > .ant-tabs-nav-container > .ant-tabs-nav-wrap > .ant-tabs-nav-scroll > .ant-tabs-nav > div
+		> .ant-tabs-tab:hover,
+		> .ant-tabs-tab-active
+			color: $tab-title-active-color
+
+	.ljit-tabs--inkbar > .ant-tabs-bar > .ant-tabs-nav-container > .ant-tabs-nav-wrap > .ant-tabs-nav-scroll > .ant-tabs-nav > .ant-tabs-ink-bar
+		background-color: $tab-title-active-color
+		height: 4px
+		border-radius: 2px
+
+	&__btn-remove
+		display: flex
+		align-items: center
+		justify-content: center
+		width: 20px
+		height: 20px
+		padding: 0px
+		&, &:focus, &:hover, &:active
+			background: alpha($black, 0)
+
+	.filtered-orders
+		position: relative
+
+		.list-wrap
+			position: relative
+			overflow-y: inherit
+
+			.ljit-list-item
+				.ant-list-item-main
+					width: 90%
+
+			.ant-spin-nested-loading
+				overflow-y: auto
+				max-height: "calc(%s - %s)" % ($order-list-total-height $order-lists-height)
+				height: "calc(%s - %s)" % ($order-list-total-height $order-lists-height)
+				min-height: $adjust-screen-min-height - $order-lists-height
+				margin-bottom: $pagination-height
+				@media only screen and (min-height: $adjust-screen-max-height + 1px)
+					max-height: $adjust-screen-max-height - $order-lists-height
+
+			.ant-list-pagination
+				position: absolute
+				bottom: -1 * $pagination-height
+				width: 100%
+				padding: 11px 11px 11px 0
+				margin-top: 0
+				height: $pagination-height
+				min-height: $pagination-height
+				border-top: 1px solid $ivory-grey3
+				box-shadow: 0 3px 10px 0px alpha($black, 0.2)
+
+		.list-item-wrap
+			display: flex
+			align-items: center
+
+		.list-item-cell
+			padding: 0 5px 0 0
+
+			&--tag
+				width: 23%
+				text-align: center
+				position: relative
+
+				&.with-copyable-text
+					min-width: 155px
+				
+					.copyable-text
+						transform: scale(0.83)
+						-webkit-transform: scale(0.83)
+
+				.has-new-activity
+					position: absolute
+					left: -5px
+					top: 10px
+
+				&.with-copyable-text
+					min-width: 92px
+					.order-tag
+						width: 77px
+						height: 22px
+						font-size: 12px
+						margin: 0 0 6px 0
+					.has-new-activity
+						top: 21px
+			&--status
+				width: 44%
+				margin-left: -1em
+
+			&--description
+				color: #6b6b6b
+				line-height: 1.3
+				width: 33%
+				margin-left: 8px
+
+				> div
+					display: flex
+					align-items: center
+					min-width: 164px
+					white-space: nowrap
+
+					span
+						overflow: hidden
+						white-space: nowrap
+						max-width: 146px
+						text-overflow: ellipsis
+
+				.ljit-icon
+					margin-right: 5px

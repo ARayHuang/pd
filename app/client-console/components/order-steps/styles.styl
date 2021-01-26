@@ -1,0 +1,40 @@
+@import '../../styling/color.styl';
+
+.order-steps
+	.ant-steps-item-wait .ant-steps-item-icon > .ant-steps-icon .ant-steps-icon-dot
+		background-color: $light-grey40
+
+	.ant-steps-item-process .ant-steps-item-icon
+		width: 8px
+		height: 8px
+		line-height: 8px
+
+	.ant-steps-item-process,
+	&--accepted .ant-steps-item-wait,
+	&--resolved .ant-steps-item-wait,
+	&--completed .ant-steps-item-wait,
+	&--tracked .ant-steps-item-wait
+		.ant-steps-item-icon > .ant-steps-icon .ant-steps-icon-dot
+			width: 8px
+			height: 8px
+			background-color: $blue;
+			top: 0
+
+	.ant-steps-item-tail::after
+		height: 2px
+		background-color: $light-grey40
+
+	.ant-steps-item-process,
+	&--accepted,
+	&--resolved,
+	&--completed,
+	&--tracked
+		.ant-steps-item-wait .ant-steps-item-title
+			font-weight: 500
+			color: $black
+
+	&--resolved,
+	&--completed,
+	&--tracked
+		.ant-steps-item-tail::after
+			background-color: $blue

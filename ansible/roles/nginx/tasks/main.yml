@@ -1,0 +1,66 @@
+- name: Update apt packages
+  become: yes
+  apt:
+    update_cache: yes
+
+- name: Install nginx
+  become: yes
+  apt:
+    name: nginx
+    state: latest
+
+- name: Turn off server tokens
+  become: yes
+  replace:
+    path: /etc/nginx/nginx.conf
+    regexp: '#\s*(server_tokens off;)'
+    replace: '\1'
+
+- name: Set max body size as 101M
+  become: yes
+  lineinfile:
+    dest: /etc/nginx/nginx.conf
+    insertafter: server_tokens off;
+    line: client_max_body_size 101M;
+
+- name: Enable gzip
+  become: yes
+  replace:
+    path: /etc/nginx/nginx.conf
+    regexp: '#\s*(gzip_vary on;)'
+    replace: '\1'
+
+- name: Set gzip mime-type
+  become: yes
+  replace:
+    path: /etc/nginx/nginx.conf
+    regexp: '#\s*(gzip_types)'
+    replace: '\1'
+
+- name: Copy nginx configuration
+  become: yes
+  template:
+    owner: root
+    group: root
+    mode: 0644
+    src: pai-dan-system
+    dest: /etc/nginx/sites-available/pai-dan-system
+
+- name: Create a symbolic link to pai-dan-system
+  become: yes
+  file:
+    src: /etc/nginx/sites-available/pai-dan-system
+    dest: /etc/nginx/sites-enabled/pai-dan-system
+    owner: root
+    group: root
+    state: link
+
+- name: Disable default site
+  become: yes
+  file:
+    path: /etc/nginx/sites-enabled/default
+    state: absent
+
+- name: Restart nginx
+  command: /bin/true
+  notify: Restart nginx

@@ -1,0 +1,97 @@
+@import './color.styl'
+
+$fomr-border-color = $ivory-grey
+$label-color = #6b6b6b
+$input-color = $black
+$input-disabled-color = rgba(124, 130, 137, 0.6)
+$input-background = #d4dbe1
+$input-dark-background = #adbac6
+$select-background = #d4dbe1
+$icon-color = $light-grey
+
+.dispatch-form,
+.search-form
+	.ljit-form
+		padding: 6px 24px 2px
+		border-bottom: 1px solid $fomr-border-color
+
+		.ljit-input:read-only
+			background-color: transparent
+
+		.ant-input
+			width: 100%
+			color: $input-color
+			background-color: $input-background
+
+			&[readOnly],
+			&[disabled]
+				color: $input-disabled-color
+				background-color: $input-dark-background
+
+			&,
+			&:hover,
+			&:focus,
+			&:active
+				box-shadow: none
+
+			&:hover,
+			&:focus,
+			&:active
+				border-color: $blue
+
+		label
+			font-size: 12px
+			color: $label-color
+
+		.ant-form-item-required::before
+			display: none
+
+		.ant-form-item-label
+			line-height: 14px
+
+		.ant-form-item
+			margin-bottom: 12px
+
+		.ljit-form-label
+			&.input-desc input
+				width: 100%
+
+			.ant-form-explain
+				margin-top: 0
+
+		.ljit-form-button-row .ant-form-item
+			margin-top: 20px
+
+		.select-dropdown
+			.ant-select-selection
+				&__placeholder
+					color: $input-disabled-color
+
+			.ant-select-arrow
+				color: $icon-color
+
+		.ljit-daterange-picker
+			width: 100%
+
+		.ant-calendar-picker-input
+			background-color: $input-background
+			padding: 4px 4px 4px 3px
+			position: relative
+
+			i
+				color: $icon-color
+				right: 7px
+				position: absolute
+
+				&.anticon-close-circle
+					background-color: $input-background
+
+			.ant-calendar-range-picker-input
+				width: 44%
+
+		.ant-calendar-picker
+			&:hover,
+			&:focus,
+			&:active
+				.ant-calendar-picker-input:not(.ant-input-disabled)
+					border-color: $blue

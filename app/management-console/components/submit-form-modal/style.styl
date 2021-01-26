@@ -1,0 +1,23 @@
+@import '../../lib/styling/color';
+
+.submit-form-modal
+	&__radio-avatar-selector
+		> .ant-radio-button-wrapper
+			background: $white
+			width: 66px
+			height: 66px
+			border-radius: 50%
+			padding: 0
+			margin-right: 35px
+			border: 0
+
+			&:not(:first-child)::before
+				width: 0
+
+			&,
+			&:focus,
+			&:active
+				outline: 0
+
+			&.ant-radio-button-wrapper-checked
+				border: 1px solid $light-blue

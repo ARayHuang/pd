@@ -1,0 +1,53 @@
+@import './color.styl';
+
+$btn-color = $white
+$btn-blue-background = $blue
+$btn-blue-background-hover = rgba($btn-blue-background, 0.85)
+$btn-blue-background-pressed = $dark-blue
+$btn-grey-background = $grey
+$btn-grey-background-hover = rgba($btn-grey-background, 0.85)
+$btn-grey-background-pressed = $dark-grey2
+$btn-disabled-background = $light-blue2
+
+disabled-setting()
+	&.ant-btn[disabled]
+		&,
+		&:hover,
+		&:focus,
+		&:active
+			color: $btn-color
+			background-color: $btn-disabled-background
+
+.ljit-btn
+	color: $btn-color
+	border-radius: 6px
+	font-size: 16px
+	width: 88px
+	&,
+	&:hover,
+	&:focus,
+	&:active
+		color: $btn-color
+		border: 0
+		line-height: 1
+
+	&.btn--blue
+		background-color: $btn-blue-background
+		&:hover
+			background-color: $btn-blue-background-hover
+		&:focus,
+		&:active
+			background-color: $btn-blue-background-pressed
+		disabled-setting()
+
+	&.btn--grey
+		background-color: $btn-grey-background
+		&:hover
+			background-color: $btn-grey-background-hover
+		&:focus,
+		&:active
+			background-color: $btn-grey-background-pressed
+		disabled-setting()
+
+	&.ljit-notify__close
+		width: auto

@@ -1,0 +1,79 @@
+$login-font-size = 14px
+$login-font-color = #FFFFFF
+$login-field-height = 40px
+$login-field-bg-color = rgba(255,255,255,.1)
+
+.login-page-wrapper
+	position: relative
+
+.login-page
+	position: absolute
+	top: 0
+	left: 0
+	width: 100%
+	height: 100%
+	background: url(./images/bg.jpg) no-repeat
+	background-attachment: fixed
+	background-size: cover
+	background-position: center
+
+	&__content
+		position: absolute
+		top: 50%
+		left: 50%
+		transform: translate(-50%, -50%)
+		width: 100%
+		max-width: 552px
+		padding: 50px 0 135px
+		border-radius: 8px
+		box-shadow: 0 8px 28px 0 rgba(32,35,39,0.12)
+		background-color: #002142
+		color: $login-font-color
+
+	&__logo
+		text-align: center
+		margin-bottom: 80px
+
+	&__form
+		width: 100%
+		max-width: 344px
+		padding: 0 20px
+		margin: 0 auto
+		form
+			height: 240px
+			position: relative
+
+		.ljit-form-button-row
+			position: absolute
+			bottom: 0
+			width: 100%
+			max-width: 344px
+		.ljit-form-label
+			margin-bottom: 40px
+
+		.ljit-form-search-btn
+			width: 100%
+			height: $login-field-height
+			margin: 0
+
+		.ljit-form-button-row
+			> .ljit-form-col
+				width: 100%
+				margin-left: 0
+
+				> .ant-form-item
+					margin-bottom: 0
+
+		.ant-input-affix-wrapper
+			> .ant-input
+				padding-left: 40px
+
+		&__input
+			&:read-only
+				background-color: transparent
+
+			> .ant-input
+				height: $login-field-height
+				border: 1px solid $login-field-bg-color
+				background-color: $login-field-bg-color
+				color: $login-font-color

@@ -1,0 +1,36 @@
+- name: Update apt packages
+  become: yes
+  apt:
+    update_cache: yes
+
+- name: Install apt package gnupg
+  become: yes
+  apt:
+    name: gnupg
+    state: latest
+
+- name: Import the public key used by the package management system
+  become: yes
+  shell: wget -qO - https://www.mongodb.org/static/pgp/server-4.2.asc | sudo apt-key add -
+
+- name: Create a list file for MongoDB
+  become: yes
+  shell: echo "deb [ arch=amd64,arm64 ] https://repo.mongodb.org/apt/ubuntu bionic/mongodb-org/4.2 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-4.2.list
+
+- name: Update apt packages
+  become: yes
+  apt:
+    update_cache: yes
+
+- name: Install apt package mongodb-org
+  become: yes
+  apt:
+    name: mongodb-org
+    state: latest
+
+- name: Start MongoDB
+  become: yes
+  service:
+    name: mongod
+    state: restarted
+    enabled: yes

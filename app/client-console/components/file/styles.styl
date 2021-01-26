@@ -1,0 +1,116 @@
+@import '../../styling/color.styl'
+
+$file-border-color = $light-grey20
+
+.image-file,
+.video-file
+	cursor: pointer
+	margin-bottom: 12px
+
+.image-file
+	width: 48%
+	overflow: hidden
+
+	img
+		width: 100%
+		border: 1px solid $file-border-color
+		border-radius: 8px
+		background: #f0f0f0
+		min-height: 200px
+
+	&--modal
+		&__container
+			border-top: 1px solid rgba($white, 0.4)
+			padding-top: 18px
+			> img
+				max-width: 100%
+
+		&__btn--download
+			cursor: pointer
+			position: absolute
+			width: 24px
+			height: 24px
+			top: 15px
+			right: 85px
+
+		.ant-modal-header
+			background: none
+
+		.ant-modal-title
+			color: $white
+			font-weight: normal
+			display: inline-block
+
+		.ant-modal-body
+			padding: 0
+
+		.ant-modal-content
+			background-color: transparent
+
+		.ant-modal-close
+			padding: 0
+			top: 0
+			right: 15px
+
+			&::before
+				content: ''
+				background: url('../../images/cross.svg') no-repeat
+				width: 24px
+				height: 24px
+				display: block
+				position: absolute
+				top: 17px
+				right: 20px
+
+		.ant-modal-close-x i
+			display: none
+
+		img
+			margin: 0 auto
+			display: block
+
+.video-file
+	border: 1px solid $file-border-color
+	border-radius: 5px
+	width: 100%
+	overflow: hidden
+	max-height: 64px
+
+	&__file-title
+		font-size: 14px
+		overflow: hidden
+		white-space: nowrap
+		text-overflow: ellipsis
+		width: 92%
+
+	&__file
+		display: flex
+		padding: 10px 14px
+
+	&__file-content
+		margin-left: 10px
+		position: relative
+		width: 100%
+
+	&__file-title
+		color: $black
+	
+	&__file-date
+		color: $text-default-grey
+		font-size: 12px
+
+	&__file-video
+		line-height: 1
+		position: absolute
+		right: 0
+		top: 0
+		width: 39px
+		height: 39px
+		padding: 10px
+		border-radius: 5px
+		border: 1px solid $file-border-color
+
+.ant-message
+	color: $black
+	.ljit-icon--primary > svg
+		fill: #a5b0da

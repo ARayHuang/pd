@@ -1,0 +1,49 @@
+- name: Upload pai-dan-system.zip
+  synchronize:
+    src: ../pai-dan-system.zip
+    dest: ~/.
+
+- name: Ensure pai-dan-system directory exists
+  file:
+    path: ~/pai-dan-system
+    state: directory
+
+- name: Unzip pai-dan-system.zip
+  unarchive:
+    src: ~/pai-dan-system.zip
+    dest: ~/pai-dan-system
+    remote_src: yes
+
+- name: Install npm packages
+  command: npm install --only=prod
+  args:
+    chdir: ~/pai-dan-system
+
+- name: Sync indexes
+  shell: NODE_ENV={{ env }} node . sync
+  args:
+    chdir: ~/pai-dan-system
+
+- name: Restart pm2
+  command: pm2 startOrReload pm2-processes/{{ env }}.json
+  args:
+    chdir: ~/pai-dan-system
+  register: out
+
+- debug: var=out.stdout_lines
+
+- name: Sleep for 10 seconds
+  wait_for:
+    timeout: 10
+  delegate_to: localhost
+
+- name: List pm2 processes
+  command: pm2 ls
+  args:
+    chdir: ~/pai-dan-system
+  register: out
+
+- debug: var=out.stdout_lines
+
+- name: Save pm2
+  command: pm2 save

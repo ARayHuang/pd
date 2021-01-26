@@ -1,0 +1,19 @@
+@import '../../styling/button.styl';
+@import '../../styling/form.styl';
+@import '../../styling/color.styl';
+
+$form-background = #f1f4f7
+$input-disabled-color = #060707
+
+.dispatch-form
+	.ljit-form
+		background: $form-background
+
+		.ant-form-explain
+			position: absolute
+			top: 35px
+
+		.ant-input-affix-wrapper
+			.ant-input[disabled]
+					border: 0
+					color: $input-disabled-color

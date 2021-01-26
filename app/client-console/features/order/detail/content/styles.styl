@@ -1,0 +1,216 @@
+@import '../../../../styling/color.styl';
+@import '../../../../styling/height.styl';
+
+$file-height = 74vh
+$file-title = 55px
+$min-height = 231px
+$max-height = 478px
+$saving-height-inner = $saving-height + $file-title
+$border-color = $light-grey20
+$empty-height = 49px
+
+fileHeightMap = {
+	range1: {
+		base: $file-height
+		min-height: $adjust-screen-min-height
+		max-height: 808px
+	},
+	range2: {
+		base: 73.5vh
+		min-height: 809px
+		max-height: 856px
+	},
+	range3: {
+		base: 73vh
+		min-height: 857px
+		max-height: 879px
+	},
+	range4: {
+		base: 72.5vh
+		min-height: 880px
+		max-height: 900px
+	},
+	range5: {
+		base: 72vh
+		min-height: 901px
+		max-height: 923px
+	},
+	range6: {
+		base: 71.5vh
+		min-height: 924px
+		max-height: 950px
+	},
+	range7: {
+		base: 71vh
+		min-height: 951px
+		max-height: 991px
+	},
+	range8: {
+		base: 70.5vh
+		min-height: 992px
+		max-height: 1019px
+	},
+	range9: {
+		base: 70vh
+		min-height: 1020px
+		max-height: 1049px
+	},
+	range10: {
+		base: 69.5vh
+		min-height: 1050px
+		max-height: 1098px
+	},
+	range11: {
+		base: 69vh
+		min-height: 1099px
+		max-height: 1132px
+	},
+	range12: {
+		base: 68.5vh
+		min-height: 1133px
+		max-height: 1172px
+	},
+	range13: {
+		base: 68vh
+		min-height: 1173px
+		max-height: $adjust-screen-max-height
+	},
+	end: {
+		base: $max-height + $saving-height-inner
+		min-height: 1201px
+	}
+}
+
+nofileSettingMap = {
+	range1: {
+		minHeight: 0px
+		maxHeight: 900px
+		marginTop: 8vh
+		innerMarginTop: 0.5vh
+		imgHeight: 100%
+		noticeMarginTop: 1px
+	},
+	range2: {
+		minHeight: 901px
+		maxHeight: 1080px
+		marginTop: 12vh
+		innerMarginTop: 1vh
+		imgHeight: 100%
+		noticeMarginTop: 2px
+	},
+	range3: {
+		minHeight: 1081px
+		maxHeight: $adjust-screen-max-height
+		marginTop: 16vh
+		innerMarginTop: 1.5vh
+		imgHeight: 100%
+		noticeMarginTop: 3px
+	}
+	end: {
+		minHeight: 1201px
+		marginTop: 200px
+		innerMarginTop: 50px
+		imgHeight: 100%
+		noticeMarginTop: 4px
+	}
+}
+
+.order-details
+	margin-bottom: 18px
+	position: relative
+
+	.ant-spin
+		color: $blue
+		.ant-spin-dot-item
+			background-color: $blue
+
+	&__attachment
+		border-bottom: 1px solid $border-color
+		min-height: $min-height + 40px
+		max-height: $max-height + 40px
+		height: "calc(%s - %s)" % ($file-height $saving-height)
+		height-setting(height, fileHeightMap, $saving-height)
+
+		.order-details__content
+			min-height: $min-height
+			overflow-y: auto
+			display: flex
+			flex-wrap: wrap
+			justify-content: space-between
+			max-height: "calc(%s - %s)" % ($file-height $saving-height-inner)
+			height-setting(max-height, fileHeightMap, $saving-height-inner)
+
+			&:empty
+				height: auto
+
+		&.no-file
+			.order-details__content
+				justify-content: center
+				.default-screen
+					default-screen-setting(nofileSettingMap)
+
+	&__order-number
+		display: flex
+		justify-content: space-between
+		align-items: center
+		height: 52px
+		margin-bottom: 12px
+		border-bottom: 1px solid $border-color
+		.order-details__content
+			display: flex
+			align-items: center
+			color: $black
+
+	&__title
+		color: $black
+		font-size: 16px
+		font-weight: 500
+
+	&__sub-title
+		font-size: 14px
+		color: $text-light-grey
+		margin-left: 8px
+		position: relative
+		top: 5px
+
+		b
+			color: $blue
+			font-weight: 600
+
+	&__copyable-text
+		display: flex
+		align-items: center
+		padding: 7px 14px
+		border-radius: 16px
+		background: #f1f8ff
+		font-size: 14px
+		color: $light-blue4;
+
+	&__edit
+		margin-left: 14px
+		cursor: pointer
+
+	&__actions
+		position: absolute
+		top: 0px
+		right: 0px
+		display: flex
+
+	&__action
+		margin-left: 8px
+		cursor: pointer
+
+		&:first-child
+			position: relative
+
+		&--upload
+			form
+				padding: 0
+				border: 0
+				background: none
+
+			.ant-form-item-control
+				line-height: 26px
+
+		.ant-upload-list
+			display: none

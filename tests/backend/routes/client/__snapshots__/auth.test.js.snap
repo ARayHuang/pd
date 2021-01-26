@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`auth /api/v1/logout 201 created 1`] = `Object {}`;
+
+exports[`auth post /api/v1/login 201 created 1`] = `
+Object {
+  "id": "5ec4ec469d87c4387d9350ba",
+  "username": "provider01",
+}
+`;
+
+exports[`auth post /api/v1/login 401 unauthorized (wrong password) 1`] = `
+Object {
+  "code": "888.010.401",
+  "message": "帐密错误",
+  "type": "AuthenticationError",
+}
+`;
+
+exports[`auth post /api/v1/login 401 unauthorized (wrong username) 1`] = `
+Object {
+  "code": "888.012.404",
+  "message": "帐密错误",
+  "type": "AuthenticationError",
+}
+`;
+
+exports[`auth post /api/v1/login 422 invalid username 1`] = `
+Object {
+  "code": "888.012.422",
+  "fields": Array [
+    "username",
+  ],
+  "message": "输入格式错误",
+  "type": "RequestValidationError",
+}
+`;

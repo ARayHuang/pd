@@ -1,0 +1,9 @@
+- name: Add node source
+  become: yes
+  shell: curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash -
+
+- name: Install nodejs
+  become: yes
+  apt:
+    name: nodejs
+    state: latest

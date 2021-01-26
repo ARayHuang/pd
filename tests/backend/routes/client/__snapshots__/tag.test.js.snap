@@ -1,0 +1,66 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`tag get /api/v1/tags 200 ok 1`] = `
+Array [
+  Object {
+    "backgroundColor": "B9C8F9",
+    "fontColor": "2636D8",
+    "id": "5ed7351e4f46070bd8e2dfef",
+    "name": "标签十",
+  },
+  Object {
+    "backgroundColor": "D9DE82",
+    "fontColor": "858106",
+    "id": "5ed7351e4f46070bd8e2dfee",
+    "name": "标签九",
+  },
+  Object {
+    "backgroundColor": "D5C3A2",
+    "fontColor": "775310",
+    "id": "5ed7351e4f46070bd8e2dfed",
+    "name": "标签八",
+  },
+  Object {
+    "backgroundColor": "97DFCE",
+    "fontColor": "018062",
+    "id": "5ed7351e4f46070bd8e2dfec",
+    "name": "标签七",
+  },
+  Object {
+    "backgroundColor": "E0C3FF",
+    "fontColor": "6820B5",
+    "id": "5ed7351e4f46070bd8e2dfeb",
+    "name": "标签六",
+  },
+  Object {
+    "backgroundColor": "C2E49E",
+    "fontColor": "3A6B07",
+    "id": "5ed7351e4f46070bd8e2dfea",
+    "name": "标签五",
+  },
+  Object {
+    "backgroundColor": "ADE0F8",
+    "fontColor": "0E61B0",
+    "id": "5ed7351e4f46070bd8e2dfe9",
+    "name": "标签四",
+  },
+  Object {
+    "backgroundColor": "FFDEAD",
+    "fontColor": "AC6802",
+    "id": "5ed7351e4f46070bd8e2dfe8",
+    "name": "标签三",
+  },
+  Object {
+    "backgroundColor": "FFC1A9",
+    "fontColor": "D63E03",
+    "id": "5ed7351e4f46070bd8e2dfe7",
+    "name": "标签二",
+  },
+  Object {
+    "backgroundColor": "FBC8D9",
+    "fontColor": "CD349D",
+    "id": "5ed7351e4f46070bd8e2dfe6",
+    "name": "标签一",
+  },
+]
+`;

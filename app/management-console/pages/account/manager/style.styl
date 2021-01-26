@@ -1,0 +1,81 @@
+@import '../../../lib/styling/color'; 
+
+.account-manager-page
+	background-color: $white
+	padding: 24px 32px 49px 43px
+	.ljit-form
+		.ant-row-flex
+			display: block
+
+	&__account-info
+		.ant-table-small > .ant-table-content > .ant-table-body > table > .ant-table-thead > tr
+			&,
+			& > th
+				border-bottom: 0
+			
+	.header-button-bar__pool
+		margin-bottom: 15px
+
+	&__submit-form-modal
+		.ant-modal-body
+			padding: 36px 103px 15px 0
+		label
+			color: $black
+			font-weight: 400
+			&::before
+				content: ''
+		.ljit-label-text
+			margin-left: 12%
+			margin-bottom: 19px
+		.submit-form-modal
+			&__radio-avatar-selector
+				> .ant-radio-button-wrapper
+					background: $white
+					width: 66px
+					height: 66px
+					border-radius: 50%
+					padding: 0
+					margin-right: 35px
+					border: 0
+
+					&:not(:first-child)::before
+						width: 0
+
+					&,
+					&:focus,
+					&:active
+						outline: 0
+
+					&.ant-radio-button-wrapper-checked
+						border: 1px solid $light-blue
+
+			&__permission-check-box
+				margin-left: -5em
+
+	.search-form-item
+		display: flex
+
+		&__left
+			.ant-form-item-control-wrapper
+				width: calc(100% - 43px)
+			.ant-form-item-label
+				width: 43px
+
+		&__middle
+			.ant-form-item-control-wrapper
+				width: calc(100% - 74px)
+			.ant-form-item-label
+				width: 74px
+
+		&__right
+			.ant-form-item-control-wrapper
+				width: calc(100% - 143px)
+			.ant-form-item-label
+				width: 143px
+
+	.ljit-form-reset-btn
+		margin-left: 25px
+		margin-bottom: 12px
+
+	.ljit-tag
+		width: 79px

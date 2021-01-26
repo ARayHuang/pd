@@ -1,0 +1,151 @@
+@import '../../styling/color.styl';
+
+$item-active-color = $blue
+$item-active-background = $light-blue
+$item-border-color = $ivory-grey
+$pagination-active-color = $white
+$pagination-active-background = $blue
+$pagination-hover-background = #eef2ff
+
+.list-wrap
+	overflow-y: auto
+	position: relative
+	background-color: $white
+
+	.ljit-list-item
+		width: 100%
+		padding: 4px 24px 4px 14px
+		height: 61px
+		border-top: 1px solid $item-border-color
+
+		&:hover
+			cursor: default
+
+		&__wrapper
+			height: 100%
+			padding: 0 0 0 8px
+			width: 100%
+
+		&__wrapper > div
+			width: 100%
+
+		&__title
+			display: none
+
+		&--selected
+			background-color: $item-active-background
+			position: relative
+
+			&::before
+				content: ''
+				height: 100%
+				width: 4px
+				left: 0
+				top: 0
+				position: absolute
+				background-color: $blue
+
+		&--no-delete
+			.ant-list-item-extra:before
+				display: none
+
+	.ant-spin-container
+		> div:first-child .ljit-list-item
+			border-top: 0
+
+		> div:last-child .ljit-list-item
+			border-bottom: 1px solid $item-border-color
+
+	.ant-pagination-item,
+	.ant-pagination-item-link
+		width: 26px
+		height: 26px
+		min-width: 26px
+		line-height: 26px
+		border: none
+		border-radius: 50%
+
+	.ant-pagination-item
+		a
+			color: $light-grey
+		&:hover
+			background-color: $pagination-hover-background
+		&-active
+			a
+				color: $pagination-active-color
+
+	.ant-pagination-item-active
+		background: $pagination-active-background
+		&:hover
+			background: $pagination-active-background
+
+	.ant-pagination-next,
+	.ant-pagination-prev
+		width: 80px
+		height: 26px
+		min-width: 26px
+		line-height: 26px
+		border: none
+		border-radius: 50%
+
+	.ant-pagination-jump-prev,
+	.ant-pagination-jump-next
+		display: none
+
+	.ant-list-item-extra
+		display: flex
+		align-items: center
+		margin-left: 0
+		padding-left: 24px
+		position: relative
+		width: 44px
+
+		&::before
+			content: ''
+			width: 1px
+			height: 80%
+			background-color: $light-grey20
+			position: absolute
+			left: 0
+
+	.btn-remove
+		&,
+		&:hover,
+		&:focus,
+		&:active
+			padding: 0
+			height: 20px
+			width: 20px
+			color: $light-grey
+
+	&__hide-first-page
+		li:nth-child(2)
+			display: none
+
+	&__hide-last-page
+		li:nth-last-child(2)
+			display: none
+
+	&__page-btn-wrapper
+		display: flex
+		a
+			width: 26px
+			height: 26px
+			min-width: 26px
+			border-radius: 50%
+			margin-left: 8px
+			margin-right: 8px
+			&:hover
+				background: $pagination-hover-background
+			&:active
+				background: $pagination-active-background
+				color: $pagination-active-color
+
+	.ant-pagination-disabled
+		> .list-wrap__page-btn-wrapper
+			a
+				&:hover
+					background: inherit
+				&:active
+					background: inherit
+					color: inherit

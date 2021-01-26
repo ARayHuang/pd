@@ -1,0 +1,52 @@
+.sidebar-menu
+	font-size: 14px
+	min-height: 100vh
+
+	&__title
+		min-height: 64px
+		padding: 21px
+		color: #FFF
+		font-weight: 600
+		font-size: 16px
+		text-align: center
+		background-color: #002140
+		line-height: 22px
+
+	.ant-layout-sider-children
+		max-height: 100vh
+		overflow-y: hidden
+		overflow-x: hidden
+
+	.ant-layout-sider-children:hover
+		overflow-y: auto
+
+	.ant-menu
+		.ant-menu-submenu-title,
+		.ant-menu-item
+			height: 38px
+			line-height: 38px
+			margin: 0
+
+	.ant-menu-inline
+		.ant-menu-item
+			&:not(:last-child)
+				margin-bottom: 0
+
+	.ant-menu-inline
+		>.ant-menu-submenu
+			>.ant-menu-submenu-title
+				height: 38px
+				line-height: 38px
+
+	.ant-menu-sub.ant-menu-inline
+		>.ant-menu-submenu
+			>.ant-menu-submenu-title
+				height: 38px
+				line-height: 38px
+
+		>.ant-menu-item
+			height: 38px
+			line-height: 38px
+			&:not(:last-child)
+				margin-bottom: 0
+

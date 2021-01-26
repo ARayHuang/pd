@@ -1,0 +1,17 @@
+- name: Build pai-dan-system
+  local_action: shell cd .. && npm run build
+  register: out
+
+- debug: var=out.stdout_lines
+
+- name: Zip files
+  local_action: >
+    shell cd .. &&
+    zip -r pai-dan-system.zip
+    bin
+    config
+    pm2-processes
+    public server
+    .npmrc
+    index.js
+    package.json

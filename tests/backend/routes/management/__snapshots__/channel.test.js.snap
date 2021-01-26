@@ -1,0 +1,120 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`channel delete /api/v1/channels/id=:channelId 204 no content 1`] = `Object {}`;
+
+exports[`channel delete /api/v1/channels/id=:channelId 404 channel not found 1`] = `
+Object {
+  "code": "888.003.404",
+  "message": "找不到团队",
+  "type": "NotFoundError",
+}
+`;
+
+exports[`channel delete /api/v1/channels/id=:channelId 422 invalid channelId 1`] = `
+Object {
+  "code": "888.003.422",
+  "fields": Array [
+    "channelId",
+  ],
+  "message": "输入格式错误",
+  "type": "RequestValidationError",
+}
+`;
+
+exports[`channel get /api/v1/channels 200 ok 1`] = `
+Object {
+  "data": Array [
+    Object {
+      "id": Any<String>,
+      "name": "conflict",
+    },
+    Object {
+      "id": Any<String>,
+      "name": "频道一",
+    },
+  ],
+  "numOfItems": 2,
+  "numOfPages": 1,
+}
+`;
+
+exports[`channel get /api/v1/channels 422 invalid sort 1`] = `
+Object {
+  "code": "888.003.422",
+  "fields": Array [
+    "sort",
+  ],
+  "message": "输入格式错误",
+  "type": "RequestValidationError",
+}
+`;
+
+exports[`channel get /api/v1/channels/id=:channelId 200 ok 1`] = `
+Object {
+  "id": Any<String>,
+  "name": "频道一",
+}
+`;
+
+exports[`channel get /api/v1/channels/id=:channelId 404 not found 1`] = `
+Object {
+  "code": "888.003.404",
+  "message": "找不到团队",
+  "type": "NotFoundError",
+}
+`;
+
+exports[`channel post /api/v1/channels 201 created 1`] = `
+Object {
+  "id": Any<String>,
+  "name": "createChannelTest",
+}
+`;
+
+exports[`channel post /api/v1/channels 409 conflict 1`] = `
+Object {
+  "code": "888.003.409",
+  "message": "团队已存在",
+  "type": "ConflictError",
+}
+`;
+
+exports[`channel post /api/v1/channels 422 invalid name 1`] = `
+Object {
+  "code": "888.003.422",
+  "fields": Array [
+    "name",
+  ],
+  "message": "输入格式错误",
+  "type": "RequestValidationError",
+}
+`;
+
+exports[`channel put /api/v1/channels/id=:channelId 204 no content 1`] = `Object {}`;
+
+exports[`channel put /api/v1/channels/id=:channelId 404 channel not found 1`] = `
+Object {
+  "code": "888.003.404",
+  "message": "找不到团队",
+  "type": "NotFoundError",
+}
+`;
+
+exports[`channel put /api/v1/channels/id=:channelId 409 conflict 1`] = `
+Object {
+  "code": "888.003.409",
+  "message": "团队已存在",
+  "type": "ConflictError",
+}
+`;
+
+exports[`channel put /api/v1/channels/id=:channelId 422 invalid channelId 1`] = `
+Object {
+  "code": "888.003.422",
+  "fields": Array [
+    "channelId",
+  ],
+  "message": "输入格式错误",
+  "type": "RequestValidationError",
+}
+`;

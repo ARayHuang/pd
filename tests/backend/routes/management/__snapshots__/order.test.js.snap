@@ -1,0 +1,308 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`comment get /api/v1/orders/id=:orderId/comments 200 ok 1`] = `
+Object {
+  "data": Array [
+    Object {
+      "content": "留言測試",
+      "createdAt": Any<String>,
+      "id": "5f214bddc8f84023f2ce4213",
+      "user": Object {
+        "displayName": "开单组管理员",
+        "id": "5ec4ec469d87c4387d9350ba",
+        "profilePictureId": "1",
+      },
+    },
+  ],
+  "numOfItems": 1,
+  "numOfPages": 1,
+}
+`;
+
+exports[`comment get /api/v1/orders/id=:orderId/comments 404 orderId not found 1`] = `
+Object {
+  "code": "888.005.404",
+  "message": "找不到派单",
+  "type": "NotFoundError",
+}
+`;
+
+exports[`comment get /api/v1/orders/id=:orderId/comments 422 invalid orderId 1`] = `
+Object {
+  "code": "888.005.422",
+  "fields": Array [
+    "orderId",
+  ],
+  "message": "输入格式错误",
+  "type": "RequestValidationError",
+}
+`;
+
+exports[`log get /api/v1/orders/id=:orderId/logs 200 ok 1`] = `
+Object {
+  "data": Array [
+    Object {
+      "createdAt": "2020-06-22T05:42:27.000Z",
+      "id": "5f0bf560cf21795568995832",
+      "operator": Object {
+        "displayName": "开单组管理员",
+        "id": "5ec4ec469d87c4387d9350ba",
+      },
+      "type": "created-order",
+    },
+  ],
+  "numOfItems": 1,
+  "numOfPages": 1,
+}
+`;
+
+exports[`log get /api/v1/orders/id=:orderId/logs 404 orderId not found 1`] = `
+Object {
+  "code": "888.005.404",
+  "message": "找不到派单",
+  "type": "NotFoundError",
+}
+`;
+
+exports[`log get /api/v1/orders/id=:orderId/logs 422 invalid orderId 1`] = `
+Object {
+  "code": "888.005.422",
+  "fields": Array [
+    "orderId",
+  ],
+  "message": "输入格式错误",
+  "type": "RequestValidationError",
+}
+`;
+
+exports[`order get /api/v1/orders 200 ok 1`] = `
+Object {
+  "data": Array [
+    Object {
+      "channel": Object {
+        "id": "5ec5f60b25fbb049dbd231e2",
+        "name": "频道一",
+      },
+      "createdAt": Any<String>,
+      "customerName": "客戶二",
+      "description": "R1234567895",
+      "handler": Object {
+        "displayName": "接单组管理员",
+        "id": "5ec4ec469d87c4387d9350bc",
+      },
+      "id": "5ed7496b9ee92451f2e76236",
+      "owner": Object {
+        "displayName": "开单组员工",
+        "id": "5ec4ec469d87c4387d9350bb",
+      },
+      "serialNumber": Any<String>,
+      "status": "deleted",
+      "tags": Array [
+        Object {
+          "backgroundColor": "FFC1A9",
+          "fontColor": "D63E03",
+          "id": "5ed7351e4f46070bd8e2dfe7",
+          "name": "标签二",
+        },
+      ],
+    },
+    Object {
+      "channel": Object {
+        "id": "5ec5f60b25fbb049dbd231e2",
+        "name": "频道一",
+      },
+      "completedAt": Any<String>,
+      "createdAt": Any<String>,
+      "customerName": "客戶一",
+      "description": "R1234567894",
+      "handler": Object {
+        "displayName": "接单组员工",
+        "id": "5ec4ec469d87c4387d9350bd",
+      },
+      "id": "5ed7496b9ee92451f2e76235",
+      "owner": Object {
+        "displayName": "开单组管理员",
+        "id": "5ec4ec469d87c4387d9350ba",
+      },
+      "serialNumber": Any<String>,
+      "status": "completed",
+      "tags": Array [
+        Object {
+          "backgroundColor": "FFC1A9",
+          "fontColor": "D63E03",
+          "id": "5ed7351e4f46070bd8e2dfe7",
+          "name": "标签二",
+        },
+      ],
+    },
+    Object {
+      "channel": Object {
+        "id": "5ec5f60b25fbb049dbd231e2",
+        "name": "频道一",
+      },
+      "createdAt": Any<String>,
+      "customerName": "客戶一",
+      "description": "R1234567893",
+      "handler": Object {
+        "displayName": "接单组员工",
+        "id": "5ec4ec469d87c4387d9350bd",
+      },
+      "id": "5ed7496b9ee92451f2e76234",
+      "owner": Object {
+        "displayName": "开单组员工",
+        "id": "5ec4ec469d87c4387d9350bb",
+      },
+      "serialNumber": Any<String>,
+      "status": "tracked",
+      "tags": Array [
+        Object {
+          "backgroundColor": "FFC1A9",
+          "fontColor": "D63E03",
+          "id": "5ed7351e4f46070bd8e2dfe7",
+          "name": "标签二",
+        },
+      ],
+    },
+    Object {
+      "channel": Object {
+        "id": "5ec5f60b25fbb049dbd231e2",
+        "name": "频道一",
+      },
+      "createdAt": Any<String>,
+      "customerName": "客戶三",
+      "description": "R1234567892",
+      "handler": Object {
+        "displayName": "接单组员工",
+        "id": "5ec4ec469d87c4387d9350bd",
+      },
+      "id": "5ed7496b9ee92451f2e76233",
+      "owner": Object {
+        "displayName": "开单组员工",
+        "id": "5ec4ec469d87c4387d9350bb",
+      },
+      "serialNumber": Any<String>,
+      "status": "resolved",
+      "tags": Array [
+        Object {
+          "backgroundColor": "FFC1A9",
+          "fontColor": "D63E03",
+          "id": "5ed7351e4f46070bd8e2dfe7",
+          "name": "标签二",
+        },
+      ],
+    },
+    Object {
+      "channel": Object {
+        "id": "5ec5f60b25fbb049dbd231e2",
+        "name": "频道一",
+      },
+      "createdAt": Any<String>,
+      "customerName": "客戶二",
+      "description": "R1234567891",
+      "handler": Object {
+        "displayName": "接单组管理员",
+        "id": "5ec4ec469d87c4387d9350bc",
+      },
+      "id": "5ed7496b9ee92451f2e76232",
+      "owner": Object {
+        "displayName": "开单组管理员",
+        "id": "5ec4ec469d87c4387d9350ba",
+      },
+      "serialNumber": Any<String>,
+      "status": "accepted",
+      "tags": Array [
+        Object {
+          "backgroundColor": "FFC1A9",
+          "fontColor": "D63E03",
+          "id": "5ed7351e4f46070bd8e2dfe7",
+          "name": "标签二",
+        },
+      ],
+    },
+    Object {
+      "channel": Object {
+        "id": "5ec5f60b25fbb049dbd231e2",
+        "name": "频道一",
+      },
+      "createdAt": Any<String>,
+      "customerName": "客戶一",
+      "description": "R1234567890",
+      "id": "5ed7496b9ee92451f2e76231",
+      "owner": Object {
+        "displayName": "开单组管理员",
+        "id": "5ec4ec469d87c4387d9350ba",
+      },
+      "serialNumber": Any<String>,
+      "status": "created",
+      "tags": Array [
+        Object {
+          "backgroundColor": "FBC8D9",
+          "fontColor": "CD349D",
+          "id": "5ed7351e4f46070bd8e2dfe6",
+          "name": "标签一",
+        },
+      ],
+    },
+  ],
+  "numOfItems": 6,
+  "numOfPages": 1,
+}
+`;
+
+exports[`order get /api/v1/orders 422 invalid page 1`] = `
+Object {
+  "code": "888.005.422",
+  "fields": Array [
+    "description",
+  ],
+  "message": "输入格式错误",
+  "type": "RequestValidationError",
+}
+`;
+
+exports[`order get /api/v1/orders/id=:orderId 200 ok 1`] = `
+Object {
+  "channel": Object {
+    "id": "5ec5f60b25fbb049dbd231e2",
+    "name": "频道一",
+  },
+  "createdAt": Any<String>,
+  "customerName": "客戶一",
+  "description": "R1234567890",
+  "files": Array [],
+  "id": "5ed7496b9ee92451f2e76231",
+  "owner": Object {
+    "displayName": "开单组管理员",
+    "id": "5ec4ec469d87c4387d9350ba",
+  },
+  "serialNumber": Any<String>,
+  "status": "created",
+  "tags": Array [
+    Object {
+      "backgroundColor": "FBC8D9",
+      "fontColor": "CD349D",
+      "id": "5ed7351e4f46070bd8e2dfe6",
+      "name": "标签一",
+    },
+  ],
+}
+`;
+
+exports[`order get /api/v1/orders/id=:orderId 404 orderId not found 1`] = `
+Object {
+  "code": "888.005.404",
+  "message": "找不到派单",
+  "type": "NotFoundError",
+}
+`;
+
+exports[`order get /api/v1/orders/id=:orderId 422 invalid orderId 1`] = `
+Object {
+  "code": "888.005.422",
+  "fields": Array [
+    "orderId",
+  ],
+  "message": "输入格式错误",
+  "type": "RequestValidationError",
+}
+`;

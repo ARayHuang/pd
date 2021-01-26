@@ -1,0 +1,536 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`comment get /api/v1/channels/id=:channelId/orders/id=:orderId/comments 200 ok 1`] = `
+Object {
+  "content": "測試內容",
+  "createdAt": Any<String>,
+  "id": Any<String>,
+  "user": Object {
+    "displayName": "开单组管理员",
+    "id": "5ec4ec469d87c4387d9350ba",
+    "profilePictureId": "1",
+  },
+}
+`;
+
+exports[`comment get /api/v1/channels/id=:channelId/orders/id=:orderId/comments 404 channelId not found 1`] = `
+Object {
+  "code": "888.003.404",
+  "message": "找不到团队",
+  "type": "NotFoundError",
+}
+`;
+
+exports[`comment post /api/v1/channels/id=:channelId/orders/id=:orderId/comments 201 created 1`] = `
+Object {
+  "content": "測試內容",
+  "createdAt": Any<String>,
+  "id": Any<String>,
+  "user": Object {
+    "displayName": "开单组管理员",
+    "id": "5ec4ec469d87c4387d9350ba",
+    "profilePictureId": "1",
+  },
+}
+`;
+
+exports[`comment post /api/v1/channels/id=:channelId/orders/id=:orderId/comments 403 forbidden 1`] = `
+Object {
+  "code": "888.005.403",
+  "message": "用户无权限操作",
+  "type": "ForbiddenError",
+}
+`;
+
+exports[`comment post /api/v1/channels/id=:channelId/orders/id=:orderId/comments 404 channelId not found 1`] = `
+Object {
+  "code": "888.005.404",
+  "message": "找不到派单",
+  "type": "NotFoundError",
+}
+`;
+
+exports[`comment post /api/v1/channels/id=:channelId/orders/id=:orderId/comments 404 orderId not found 1`] = `
+Object {
+  "code": "888.005.404",
+  "message": "找不到派单",
+  "type": "NotFoundError",
+}
+`;
+
+exports[`comment post /api/v1/channels/id=:channelId/orders/id=:orderId/comments 422 invalid channelId 1`] = `
+Object {
+  "code": "888.005.422",
+  "fields": Array [
+    "channelId",
+  ],
+  "message": "输入格式错误",
+  "type": "RequestValidationError",
+}
+`;
+
+exports[`file post /api/v1/channels/id=:channelId/orders/id=:orderId/files 201 created 1`] = `
+Object {
+  "createdAt": Any<String>,
+  "filename": "test.png",
+  "id": Any<String>,
+  "thumbnailUrl": Any<String>,
+  "type": "image",
+  "url": Any<String>,
+}
+`;
+
+exports[`file post /api/v1/channels/id=:channelId/orders/id=:orderId/files 403 forbidden 1`] = `
+Object {
+  "code": "888.005.403",
+  "message": "用户无权限操作",
+  "type": "ForbiddenError",
+}
+`;
+
+exports[`file post /api/v1/channels/id=:channelId/orders/id=:orderId/files 404 channel not found 1`] = `
+Object {
+  "code": "888.003.404",
+  "message": "找不到团队",
+  "type": "NotFoundError",
+}
+`;
+
+exports[`file post /api/v1/channels/id=:channelId/orders/id=:orderId/files 404 order not found 1`] = `
+Object {
+  "code": "888.005.404",
+  "message": "找不到派单",
+  "type": "NotFoundError",
+}
+`;
+
+exports[`file post /api/v1/channels/id=:channelId/orders/id=:orderId/files 422 invalid file 1`] = `
+Object {
+  "code": "888.005.422",
+  "fields": Array [
+    "file",
+  ],
+  "message": "输入格式错误",
+  "type": "RequestValidationError",
+}
+`;
+
+exports[`order delete /api/v1/channels/id=:channelId/orders/id=:orderId 204 no content 1`] = `Object {}`;
+
+exports[`order delete /api/v1/channels/id=:channelId/orders/id=:orderId 403 forbidden 1`] = `
+Object {
+  "code": "888.012.405",
+  "message": "用户无此权限",
+  "type": "ForbiddenError",
+}
+`;
+
+exports[`order delete /api/v1/channels/id=:channelId/orders/id=:orderId 404 channelId not found 1`] = `
+Object {
+  "code": "888.005.404",
+  "message": "找不到派单",
+  "type": "NotFoundError",
+}
+`;
+
+exports[`order delete /api/v1/channels/id=:channelId/orders/id=:orderId 404 orderId not found 1`] = `
+Object {
+  "code": "888.005.404",
+  "message": "找不到派单",
+  "type": "NotFoundError",
+}
+`;
+
+exports[`order delete /api/v1/channels/id=:channelId/orders/id=:orderId 422 invalid channelId 1`] = `
+Object {
+  "code": "888.005.404",
+  "fields": Array [
+    "channelId",
+  ],
+  "message": "输入格式错误",
+  "type": "RequestValidationError",
+}
+`;
+
+exports[`order get /api/v1/channels/id=:channelId/orders 200 ok 1`] = `
+Object {
+  "data": Array [
+    Object {
+      "channelId": "5ec5f60b25fbb049dbd231e2",
+      "createdAt": Any<String>,
+      "customerName": "客戶二",
+      "description": "R1234567895",
+      "handler": Object {
+        "displayName": "接单组管理员",
+        "id": "5ec4ec469d87c4387d9350bc",
+      },
+      "id": Any<String>,
+      "owner": Object {
+        "displayName": "开单组员工",
+        "id": "5ec4ec469d87c4387d9350bb",
+      },
+      "serialNumber": Any<String>,
+      "status": "deleted",
+      "tags": Array [
+        Object {
+          "backgroundColor": "FFC1A9",
+          "fontColor": "D63E03",
+          "id": "5ed7351e4f46070bd8e2dfe7",
+          "name": "标签二",
+        },
+      ],
+    },
+    Object {
+      "channelId": "5ec5f60b25fbb049dbd231e2",
+      "completedAt": Any<String>,
+      "createdAt": Any<String>,
+      "customerName": "客戶一",
+      "description": "R1234567894",
+      "handler": Object {
+        "displayName": "接单组员工",
+        "id": "5ec4ec469d87c4387d9350bd",
+      },
+      "id": Any<String>,
+      "owner": Object {
+        "displayName": "开单组管理员",
+        "id": "5ec4ec469d87c4387d9350ba",
+      },
+      "serialNumber": Any<String>,
+      "status": "completed",
+      "tags": Array [
+        Object {
+          "backgroundColor": "FFC1A9",
+          "fontColor": "D63E03",
+          "id": "5ed7351e4f46070bd8e2dfe7",
+          "name": "标签二",
+        },
+      ],
+    },
+  ],
+  "numOfItems": 2,
+  "numOfPages": 1,
+}
+`;
+
+exports[`order get /api/v1/channels/id=:channelId/orders 404 channelId not found 1`] = `
+Object {
+  "code": "888.003.404",
+  "message": "找不到团队",
+  "type": "NotFoundError",
+}
+`;
+
+exports[`order get /api/v1/channels/id=:channelId/orders 422 status required 1`] = `
+Object {
+  "code": "888.005.422",
+  "fields": Array [
+    "status",
+  ],
+  "message": "输入格式错误",
+  "type": "RequestValidationError",
+}
+`;
+
+exports[`order get /api/v1/orders 200 ok 1`] = `
+Object {
+  "data": Array [
+    Object {
+      "channel": Object {
+        "id": "5ec5f60b25fbb049dbd231e2",
+        "name": "频道一",
+      },
+      "createdAt": Any<String>,
+      "customerName": "客戶一",
+      "description": "R1234567890",
+      "id": "5ed7496b9ee92451f2e76231",
+      "owner": Object {
+        "displayName": "开单组管理员",
+        "id": "5ec4ec469d87c4387d9350ba",
+      },
+      "serialNumber": Any<String>,
+      "status": "created",
+      "tags": Array [
+        Object {
+          "backgroundColor": "FBC8D9",
+          "fontColor": "CD349D",
+          "id": "5ed7351e4f46070bd8e2dfe6",
+          "name": "标签一",
+        },
+      ],
+    },
+  ],
+  "numOfItems": 1,
+  "numOfPages": 1,
+}
+`;
+
+exports[`order get /api/v1/orders 422 invalid status 1`] = `
+Object {
+  "code": "888.005.422",
+  "fields": Array [
+    "status",
+  ],
+  "message": "输入格式错误",
+  "type": "RequestValidationError",
+}
+`;
+
+exports[`order get /api/v1/orders/id=:orderId 200 ok 1`] = `
+Object {
+  "channel": Object {
+    "id": "5ec5f60b25fbb049dbd231e2",
+    "name": "频道一",
+  },
+  "createdAt": Any<String>,
+  "customerName": "客戶一",
+  "description": "R1234567890",
+  "files": Array [],
+  "id": Any<String>,
+  "owner": Object {
+    "displayName": "开单组管理员",
+    "id": "5ec4ec469d87c4387d9350ba",
+  },
+  "serialNumber": Any<String>,
+  "status": "created",
+  "tags": Array [
+    Object {
+      "backgroundColor": "FBC8D9",
+      "fontColor": "CD349D",
+      "id": "5ed7351e4f46070bd8e2dfe6",
+      "name": "标签一",
+    },
+  ],
+}
+`;
+
+exports[`order get /api/v1/orders/id=:orderId 404 orderId not found 1`] = `
+Object {
+  "code": "888.005.404",
+  "message": "找不到派单",
+  "type": "NotFoundError",
+}
+`;
+
+exports[`order get /api/v1/orders/id=:orderId 422 ok 1`] = `
+Object {
+  "code": "888.005.422",
+  "fields": Array [
+    "orderId",
+  ],
+  "message": "输入格式错误",
+  "type": "RequestValidationError",
+}
+`;
+
+exports[`order post /api/v1/channels/id=:channelId/orders 201 created 1`] = `
+Object {
+  "id": Any<String>,
+}
+`;
+
+exports[`order post /api/v1/channels/id=:channelId/orders 403 forbidden 1`] = `
+Object {
+  "code": "888.012.405",
+  "message": "用户无此权限",
+  "type": "ForbiddenError",
+}
+`;
+
+exports[`order post /api/v1/channels/id=:channelId/orders 404 channelId not found 1`] = `
+Object {
+  "code": "888.003.404",
+  "message": "找不到团队",
+  "type": "NotFoundError",
+}
+`;
+
+exports[`order post /api/v1/channels/id=:channelId/orders 404 tagId not found 1`] = `
+Object {
+  "code": "888.004.404",
+  "message": "找不到标签",
+  "type": "NotFoundError",
+}
+`;
+
+exports[`order post /api/v1/channels/id=:channelId/orders 422 invalid channelId 1`] = `
+Object {
+  "code": "888.005.422",
+  "fields": Array [
+    "channelId",
+  ],
+  "message": "输入格式错误",
+  "type": "RequestValidationError",
+}
+`;
+
+exports[`order post /api/v1/channels/id=:channelId/orders/id=:orderId/accepted 201 created 1`] = `Object {}`;
+
+exports[`order post /api/v1/channels/id=:channelId/orders/id=:orderId/accepted 403 forbidden 1`] = `
+Object {
+  "code": "888.012.405",
+  "message": "用户无此权限",
+  "type": "ForbiddenError",
+}
+`;
+
+exports[`order post /api/v1/channels/id=:channelId/orders/id=:orderId/accepted 404 channelId not found 1`] = `
+Object {
+  "code": "888.005.404",
+  "message": "找不到派单",
+  "type": "NotFoundError",
+}
+`;
+
+exports[`order post /api/v1/channels/id=:channelId/orders/id=:orderId/accepted 404 orderId not found 1`] = `
+Object {
+  "code": "888.005.404",
+  "message": "找不到派单",
+  "type": "NotFoundError",
+}
+`;
+
+exports[`order post /api/v1/channels/id=:channelId/orders/id=:orderId/accepted 422 invalid channelId 1`] = `
+Object {
+  "code": "888.012.422",
+  "fields": Array [
+    "channelId",
+  ],
+  "message": "输入格式错误",
+  "type": "RequestValidationError",
+}
+`;
+
+exports[`order post /api/v1/channels/id=:channelId/orders/id=:orderId/completed 201 created 1`] = `Object {}`;
+
+exports[`order post /api/v1/channels/id=:channelId/orders/id=:orderId/completed 403 forbidden 1`] = `
+Object {
+  "code": "888.012.405",
+  "message": "用户无此权限",
+  "type": "ForbiddenError",
+}
+`;
+
+exports[`order post /api/v1/channels/id=:channelId/orders/id=:orderId/completed 404 channelId not found 1`] = `
+Object {
+  "code": "888.005.404",
+  "message": "找不到派单",
+  "type": "NotFoundError",
+}
+`;
+
+exports[`order post /api/v1/channels/id=:channelId/orders/id=:orderId/completed 404 orderId not found 1`] = `
+Object {
+  "code": "888.005.404",
+  "message": "找不到派单",
+  "type": "NotFoundError",
+}
+`;
+
+exports[`order post /api/v1/channels/id=:channelId/orders/id=:orderId/completed 422 invalid channelId 1`] = `
+Object {
+  "code": "888.005.422",
+  "fields": Array [
+    "channelId",
+  ],
+  "message": "输入格式错误",
+  "type": "RequestValidationError",
+}
+`;
+
+exports[`order post /api/v1/channels/id=:channelId/orders/id=:orderId/read 201 created 1`] = `Object {}`;
+
+exports[`order post /api/v1/channels/id=:channelId/orders/id=:orderId/read 422 invalid channelId 1`] = `
+Object {
+  "code": "888.005.422",
+  "fields": Array [
+    "channelId",
+  ],
+  "message": "输入格式错误",
+  "type": "RequestValidationError",
+}
+`;
+
+exports[`order post /api/v1/channels/id=:channelId/orders/id=:orderId/read 422 invalid orderId 1`] = `
+Object {
+  "code": "888.005.422",
+  "fields": Array [
+    "orderId",
+  ],
+  "message": "输入格式错误",
+  "type": "RequestValidationError",
+}
+`;
+
+exports[`order post /api/v1/channels/id=:channelId/orders/id=:orderId/resolved 201 created 1`] = `Object {}`;
+
+exports[`order post /api/v1/channels/id=:channelId/orders/id=:orderId/resolved 403 forbidden 1`] = `
+Object {
+  "code": "888.012.405",
+  "message": "用户无此权限",
+  "type": "ForbiddenError",
+}
+`;
+
+exports[`order post /api/v1/channels/id=:channelId/orders/id=:orderId/resolved 404 channelId not found 1`] = `
+Object {
+  "code": "888.005.404",
+  "message": "找不到派单",
+  "type": "NotFoundError",
+}
+`;
+
+exports[`order post /api/v1/channels/id=:channelId/orders/id=:orderId/resolved 404 orderId not found 1`] = `
+Object {
+  "code": "888.005.404",
+  "message": "找不到派单",
+  "type": "NotFoundError",
+}
+`;
+
+exports[`order post /api/v1/channels/id=:channelId/orders/id=:orderId/resolved 422 invalid channelId 1`] = `
+Object {
+  "code": "888.005.422",
+  "fields": Array [
+    "channelId",
+  ],
+  "message": "输入格式错误",
+  "type": "RequestValidationError",
+}
+`;
+
+exports[`order post /api/v1/channels/id=:channelId/orders/id=:orderId/tracked 201 created 1`] = `Object {}`;
+
+exports[`order post /api/v1/channels/id=:channelId/orders/id=:orderId/tracked 403 forbidden 1`] = `
+Object {
+  "code": "888.012.405",
+  "message": "用户无此权限",
+  "type": "ForbiddenError",
+}
+`;
+
+exports[`order post /api/v1/channels/id=:channelId/orders/id=:orderId/tracked 404 channelId not found 1`] = `
+Object {
+  "code": "888.005.404",
+  "message": "找不到派单",
+  "type": "NotFoundError",
+}
+`;
+
+exports[`order post /api/v1/channels/id=:channelId/orders/id=:orderId/tracked 404 orderId not found 1`] = `
+Object {
+  "code": "888.005.404",
+  "message": "找不到派单",
+  "type": "NotFoundError",
+}
+`;
+
+exports[`order post /api/v1/channels/id=:channelId/orders/id=:orderId/tracked 422 invalid channelId 1`] = `
+Object {
+  "code": "888.005.422",
+  "fields": Array [
+    "channelId",
+  ],
+  "message": "输入格式错误",
+  "type": "RequestValidationError",
+}
+`;

@@ -1,0 +1,13 @@
+- hosts: "{{ host }}"
+  roles:
+    - swap
+    - apt-upgrade
+    - tools
+    - nginx
+    - nodejs
+    - pm2
+    - redis
+    - mongodb
+    - build
+    - deploy
+    - initial-fixtures

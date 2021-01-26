@@ -1,0 +1,10 @@
+- name: Update apt packages
+  become: yes
+  apt:
+    update_cache: yes
+
+- name: Install apt package redis-server
+  become: yes
+  apt:
+    name: redis-server
+    state: latest

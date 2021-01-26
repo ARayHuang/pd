@@ -1,0 +1,30 @@
+@import '../../styling/color.styl'
+
+$boder-color = $blue
+$input-background = #dfe5ea
+$open-background = #eff8ff
+
+.pd-client-select
+	color: $black
+	&-dropdown
+		background: $open-background
+		border: 1px solid $boder-color
+		.ant-select-dropdown-menu-item
+			&-selected
+				background: $open-background
+			&-active
+				background: #4d63b7
+				color: #ffffff
+
+.select-dropdown
+	.ant-select-selection
+		background: $input-background
+		&:active, &:hover, &:focus
+			border-color: $boder-color
+		&__clear
+			background: $input-background
+	.ant-select-open
+		.ant-select-selection
+			background: $open-background
+			&__clear
+				background: $open-background

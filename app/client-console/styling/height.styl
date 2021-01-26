@@ -1,0 +1,55 @@
+$max-height = 100vh
+$min-height = 768px
+$adjust-screen-min-height = $min-height
+$adjust-screen-max-height = 1200px
+$order-list-total-height = $max-height
+$order-list-padding-top = 24px
+$order-list-padding-bottom = 24px
+$order-list-title-height = 48px
+$order-list-tab-height = 52px
+$order-list-search-form-height = 155px
+$consumer-order-list-search-form-height = 82px
+$order-list-padding-height = $order-list-padding-top + $order-list-padding-bottom
+$order-list-title-and-padding-height = $order-list-padding-height + $order-list-title-height
+$order-list-processing-saving-height = $order-list-title-and-padding-height + $order-list-tab-height + $order-list-search-form-height + $order-list-search-form-height
+$order-list-track-saving-height = $order-list-padding-top + $order-list-title-height + $order-list-tab-height + $order-list-search-form-height + $order-list-padding-bottom
+$order-list-closed-saving-height = $order-list-track-saving-height
+
+$consumer-order-list-processing-saving-height = $order-list-padding-height + $order-list-tab-height + $consumer-order-list-search-form-height + 2px
+$consumer-order-list-track-saving-height = $consumer-order-list-processing-saving-height
+$consumer-order-list-closed-saving-height = $consumer-order-list-track-saving-height
+
+$total-height = 95vh
+$screen-top-padding = 24px
+$screen-bottom-padding = 24px
+$description-height = 88px
+$detail-title-height = 70px
+$comment-submit-height = 77px
+$saving-height = $screen-top-padding + $detail-title-height + $description-height + $comment-submit-height + $screen-bottom-padding
+
+height-setting(type, heightMap, adjust-height)
+	for _, hRange in heightMap
+		if hRange[max-height]
+			@media only screen and (min-height: hRange[min-height]) and (max-height: hRange[max-height])
+				{type}: "calc(%s - %s)" % (hRange[base] adjust-height)
+		else
+			@media only screen and (min-height: hRange[min-height])
+				{type}: "calc(%s - %s)" % (hRange[base] adjust-height)
+
+default-screen-setting-content(marginTop, innerMarginTop, imgHeight, noticeMarginTop)
+	margin-top: marginTop
+	&.no-comments
+		margin-top: innerMarginTop
+		img
+			height: imgHeight
+		.notice-message
+			margin-top: noticeMarginTop
+
+default-screen-setting(defaultScreenSettingMap)
+	for _, settings in defaultScreenSettingMap
+		if settings[maxHeight]
+			@media only screen and (min-height: settings[minHeight]) and (max-height: settings[maxHeight])
+				default-screen-setting-content(settings[marginTop], settings[innerMarginTop], settings[imgHeight], settings[noticeMarginTop])
+		else
+			@media only screen and (min-height: settings[minHeight])
+				default-screen-setting-content(settings[marginTop], settings[innerMarginTop], settings[imgHeight], settings[noticeMarginTop])

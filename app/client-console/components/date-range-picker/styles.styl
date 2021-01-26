@@ -1,0 +1,33 @@
+@import '../../styling/color.styl';
+
+.date-range-picker
+	&__date-range-picker-dropdown
+		.ant-calendar-range
+			top: 40px
+
+		.ant-calendar-disabled-cell .ant-calendar-date
+			background: none
+
+		.ant-calendar-range .ant-calendar-in-range-cell::before
+			background-color: $light-blue
+
+		.ant-calendar-date:hover
+			background-color: $light-blue
+			color: rgba(0,0,0,.65)
+
+		.ant-calendar-today .ant-calendar-date
+			border-color: $blue
+			color: $blue
+
+		.ant-calendar-selected-date .ant-calendar-date,
+		.ant-calendar-selected-end-date .ant-calendar-date,
+		.ant-calendar-selected-start-date .ant-calendar-date
+			&,
+			&:hover
+				background-color: $blue
+				color: $white
+
+		.ant-tag-blue
+			border-color: $blue
+			background-color: $light-blue
+			color: $blue

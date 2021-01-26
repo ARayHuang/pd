@@ -1,0 +1,146 @@
+@import '../../../../styling/color.styl'
+@import '../../../../styling/height.styl'
+
+$comment-height = 62vh
+$comment-title = 55px
+$saving-height-inner = $saving-height + $comment-title
+$min-height = 170px
+$max-height = 366px
+
+commentHeightMap = {
+	range1: {
+		base: $comment-height
+		min-height: $adjust-screen-min-height
+		max-height: 831px
+	},
+	range2: {
+		base: 61.5vh
+		min-height: 832px
+		max-height: 866px
+	},
+	range3: {
+		base: 61vh
+		min-height: 867px
+		max-height: 888px
+	},
+	range4: {
+		base: 60.5vh
+		min-height: 889px
+		max-height: 915px
+	},
+	range5: {
+		base: 60vh
+		min-height: 916px
+		max-height: 939px
+	},
+	range6: {
+		base: 59.5vh
+		min-height: 940px
+		max-height: 972px
+	},
+	range7: {
+		base: 59vh
+		min-height: 973px
+		max-height: 1005px
+	},
+	range8: {
+		base: 58.5vh
+		min-height: 1006px
+		max-height: 1032px
+	},
+	range9: {
+		base: 58vh
+		min-height: 1033px
+		max-height: 1062px
+	},
+	range10: {
+		base: 57.5vh
+		min-height: 1063px
+		max-height: 1115px
+	},
+	range11: {
+		base: 57vh
+		min-height: 1116px
+		max-height: 1153px
+	},
+	range12: {
+		base: 56.5vh
+		min-height: 1154px
+		max-height: 1189px
+	},
+	range13: {
+		base: 56vh
+		min-height: 1190px
+		max-height: $adjust-screen-max-height
+	},
+}
+
+noCommentSettingMap = {
+	range1: {
+		minHeight: 0px
+		maxHeight: 900px
+		marginTop: 5vh
+		innerMarginTop: 1vh
+		imgHeight: 80px
+		noticeMarginTop: 1px
+	},
+	range2: {
+		minHeight: 901px
+		maxHeight: 1080px
+		marginTop: 10vh
+		innerMarginTop: 3.5vh
+		imgHeight: 80px
+		noticeMarginTop: 2px
+	},
+	range3: {
+		minHeight: 1081px
+		maxHeight: $adjust-screen-max-height
+		marginTop: 15vh
+		innerMarginTop: 7.5vh
+		imgHeight: 80px
+		noticeMarginTop: 3px
+	}
+	end: {
+		minHeight: 1201px
+		marginTop: 120px
+		innerMarginTop: 120px
+		imgHeight: 80px
+		noticeMarginTop: 4px
+	}
+}
+
+.order-comments
+	min-height: $min-height + $comment-title
+	max-height: $max-height + $comment-title
+	position: relative
+	height: "calc(%s - %s)" % ($comment-height $saving-height)
+	height-setting(height, commentHeightMap, $saving-height)
+
+	&__body
+		min-height: $min-height
+		max-height: $max-height
+		overflow-y: auto
+		height: "calc(%s - %s)" % ($comment-height $saving-height-inner)
+		height-setting(height, commentHeightMap, $saving-height-inner)	
+
+	&.whole-height
+		height: 100%
+		max-height: "calc(%s - %s)" % ($total-height $saving-height)
+
+		.order-comments__body
+			height: 100%
+			max-height: "calc(%s - %s)" % ($total-height $saving-height)
+			.default-screen
+				default-screen-setting(noCommentSettingMap)
+
+		&:empty
+			height: auto
+
+	&__footer
+		padding-top: 15px
+	
+	&__title
+		color: $black
+		font-size: 16px
+		font-weight: 500
+		margin-bottom: 15px

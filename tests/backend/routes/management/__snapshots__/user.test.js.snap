@@ -1,0 +1,275 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`user delete /api/v1/users/id=:userId 204 no content 1`] = `Object {}`;
+
+exports[`user delete /api/v1/users/id=:userId 404 user not found 1`] = `
+Object {
+  "code": "888.012.404",
+  "message": "用户不存在",
+  "type": "NotFoundError",
+}
+`;
+
+exports[`user delete /api/v1/users/id=:userId 422 invalid userId 1`] = `
+Object {
+  "code": "888.012.422",
+  "fields": Array [
+    "userId",
+  ],
+  "message": "输入格式错误",
+  "type": "RequestValidationError",
+}
+`;
+
+exports[`user get /api/v1/users 200 ok 1`] = `
+Object {
+  "data": Array [
+    Object {
+      "channels": Array [
+        Object {
+          "id": "5ec5f60b25fbb049dbd231e2",
+          "name": "频道一",
+        },
+      ],
+      "departmentType": "consumer",
+      "displayName": "接单组管理员",
+      "hasPermissionToAddStaff": true,
+      "id": Any<String>,
+      "isOnline": false,
+      "profilePictureId": "1",
+      "type": "manager",
+      "username": "consumer01",
+    },
+    Object {
+      "channels": Array [
+        Object {
+          "id": "5ec5f60b25fbb049dbd231e2",
+          "name": "频道一",
+        },
+      ],
+      "departmentType": "provider",
+      "displayName": "开单组管理员",
+      "hasPermissionToAddStaff": true,
+      "id": Any<String>,
+      "isOnline": false,
+      "profilePictureId": "1",
+      "type": "manager",
+      "username": "provider01",
+    },
+  ],
+  "numOfItems": 2,
+  "numOfPages": 1,
+}
+`;
+
+exports[`user get /api/v1/users 422 invalid type 1`] = `
+Object {
+  "code": "888.012.422",
+  "fields": Array [
+    "type",
+    "departmentType",
+  ],
+  "message": "输入格式错误",
+  "type": "RequestValidationError",
+}
+`;
+
+exports[`user get /api/v1/users/id=:userId 200 ok 1`] = `
+Object {
+  "channels": Array [
+    Object {
+      "id": "5ec5f60b25fbb049dbd231e2",
+      "name": "频道一",
+    },
+  ],
+  "departmentType": "provider",
+  "displayName": "开单组管理员",
+  "hasPermissionToAddStaff": true,
+  "id": Any<String>,
+  "isOnline": false,
+  "profilePictureId": "1",
+  "type": "manager",
+  "username": "provider01",
+}
+`;
+
+exports[`user get /api/v1/users/id=:userId 404 user not found 1`] = `
+Object {
+  "code": "888.012.404",
+  "message": "用户不存在",
+  "type": "NotFoundError",
+}
+`;
+
+exports[`user get /api/v1/users/id=:userId 422 invalid userId 1`] = `
+Object {
+  "code": "888.012.422",
+  "fields": Array [
+    "userId",
+  ],
+  "message": "输入格式错误",
+  "type": "RequestValidationError",
+}
+`;
+
+exports[`user get /api/v1/users/id=me 200 ok 1`] = `
+Object {
+  "channels": Array [
+    Object {
+      "id": "5ec5f60b25fbb049dbd231e2",
+      "name": "频道一",
+    },
+  ],
+  "departmentType": "provider",
+  "displayName": "开单组管理员",
+  "hasPermissionToAddStaff": true,
+  "id": "5ec4ec469d87c4387d9350ba",
+  "profilePictureId": "1",
+  "type": "manager",
+  "username": "provider01",
+}
+`;
+
+exports[`user get /api/v1/users/id=me 401 unauthorized 1`] = `
+Object {
+  "code": "888.010.402",
+  "message": "请先登入",
+  "type": "AuthenticationError",
+}
+`;
+
+exports[`user patch /api/v1/users/id=:userId?via=admin 204 no content 1`] = `Object {}`;
+
+exports[`user patch /api/v1/users/id=:userId?via=admin 403 forbidden 1`] = `
+Object {
+  "code": "888.012.405",
+  "message": "用户无此权限",
+  "type": "ForbiddenError",
+}
+`;
+
+exports[`user patch /api/v1/users/id=:userId?via=admin 404 manager not found 1`] = `
+Object {
+  "code": "888.012.404",
+  "message": "用户不存在",
+  "type": "NotFoundError",
+}
+`;
+
+exports[`user patch /api/v1/users/id=:userId?via=admin 422 invalid profilePictureId 1`] = `
+Object {
+  "code": "888.012.422",
+  "fields": Array [
+    "profilePictureId",
+  ],
+  "message": "输入格式错误",
+  "type": "RequestValidationError",
+}
+`;
+
+exports[`user patch /api/v1/users/id=:userId?via=manager 204 no content 1`] = `Object {}`;
+
+exports[`user patch /api/v1/users/id=:userId?via=manager 403 forbidden 1`] = `
+Object {
+  "code": "888.012.405",
+  "message": "用户无此权限",
+  "type": "ForbiddenError",
+}
+`;
+
+exports[`user patch /api/v1/users/id=:userId?via=manager 404 user not found 1`] = `
+Object {
+  "code": "888.012.404",
+  "message": "用户不存在",
+  "type": "NotFoundError",
+}
+`;
+
+exports[`user patch /api/v1/users/id=:userId?via=manager 422 invalid profilePictureId 1`] = `
+Object {
+  "code": "888.012.422",
+  "fields": Array [
+    "profilePictureId",
+  ],
+  "message": "输入格式错误",
+  "type": "RequestValidationError",
+}
+`;
+
+exports[`user post /api/v1/users?via=admin 201 created 1`] = `
+Object {
+  "departmentType": "provider",
+  "displayName": "新增主管帳號測試",
+  "hasPermissionToAddStaff": true,
+  "id": Any<String>,
+  "profilePictureId": "1",
+  "type": "manager",
+  "username": "createManagerTest",
+}
+`;
+
+exports[`user post /api/v1/users?via=admin 403 forbidden 1`] = `
+Object {
+  "code": "888.012.405",
+  "message": "用户无此权限",
+  "type": "ForbiddenError",
+}
+`;
+
+exports[`user post /api/v1/users?via=admin 409 created 1`] = `
+Object {
+  "code": "888.012.409",
+  "message": "帐号已存在",
+  "type": "ConflictError",
+}
+`;
+
+exports[`user post /api/v1/users?via=admin 422 invalid profilePictureId 1`] = `
+Object {
+  "code": "888.012.422",
+  "fields": Array [
+    "profilePictureId",
+  ],
+  "message": "输入格式错误",
+  "type": "RequestValidationError",
+}
+`;
+
+exports[`user post /api/v1/users?via=manager 201 created 1`] = `
+Object {
+  "departmentType": "provider",
+  "displayName": "新增部門人員帳號測試",
+  "id": Any<String>,
+  "profilePictureId": "1",
+  "shiftType": "morning",
+  "type": "staff",
+  "username": "createStaffTest",
+}
+`;
+
+exports[`user post /api/v1/users?via=manager 403 forbidden 1`] = `
+Object {
+  "code": "888.012.405",
+  "message": "用户无此权限",
+  "type": "ForbiddenError",
+}
+`;
+
+exports[`user post /api/v1/users?via=manager 409 created 1`] = `
+Object {
+  "code": "888.012.409",
+  "message": "帐号已存在",
+  "type": "ConflictError",
+}
+`;
+
+exports[`user post /api/v1/users?via=manager 422 invalid profilePictureId 1`] = `
+Object {
+  "code": "888.012.422",
+  "fields": Array [
+    "profilePictureId",
+  ],
+  "message": "输入格式错误",
+  "type": "RequestValidationError",
+}
+`;

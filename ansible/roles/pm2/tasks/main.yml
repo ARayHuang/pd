@@ -1,0 +1,20 @@
+- name: Install pm2
+  become: yes
+  command: npm install -g pm2
+
+- name: Enable pm2 startup hook
+  shell: pm2 startup systemd
+  ignore_errors: yes
+
+- name: Setup pm2 startup
+  become: yes
+  shell: env PATH=$PATH:/usr/bin /usr/lib/node_modules/pm2/bin/pm2 startup systemd -u ubuntu --hp /home/ubuntu
+
+- name: Ensure log directory exists
+  become: yes
+  file:
+    path: /var/log/pai-dan-system
+    state: directory
+    owner: ubuntu
+    group: ubuntu
+    mode: 0755

@@ -1,0 +1,27 @@
+@import '../../styling/color.styl';
+
+.copyable-text
+	display: flex
+	font-size: 12px
+	justify-content: center
+	cursor: pointer
+	color: $light-blue4
+
+	i
+		cursor: pointer
+		> svg
+			stroke: $light-blue4
+			> g
+				fill: $light-blue4
+
+	> div:first-child
+		margin-right: 1px
+
+	&__display
+		white-space: nowrap
+
+	&__tooltip-overlay
+		.ant-tooltip-inner
+			width: auto
+			display: inline-block
+			right: inherit

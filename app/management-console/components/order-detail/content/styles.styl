@@ -1,0 +1,57 @@
+@import '../../../styling/color.styl';
+
+$content-height = 253px
+$border-color = $light-grey20
+
+.order-details
+	margin-bottom: 16px
+	position: relative
+
+	&__attachment
+		border-bottom: 1px solid $border-color
+
+		.order-details__content
+			height: $content-height
+			overflow-y: auto
+			display: flex
+			flex-wrap: wrap
+			justify-content: space-between
+
+		&.no-file
+			.order-details__content
+				display: flex
+				align-items: center
+				justify-content: center
+
+				.notice-message
+					margin-top: 22px
+
+	&__description
+		padding: 0
+		margin-bottom: 12px
+		.order-details__title
+			margin-bottom: 7px
+		.order-details__content
+			padding-right: 10px
+			color: $black
+			overflow-y: auto
+			height: 45px
+
+	&__title
+		display: flex
+		justify-content: space-between
+		color: $black
+		font-size: 14px
+		font-weight: 500
+		margin-bottom: 11px		
+
+	&__sub-title
+		font-size: 14px
+		color: $text-light-grey
+
+		b
+			color: $blue
+			font-weight: 600
+
+	&__actions
+		display: flex

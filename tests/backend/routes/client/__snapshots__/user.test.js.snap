@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`user get /api/v1/users/id=me 200 ok 1`] = `
+Object {
+  "channelSettings": Array [],
+  "channels": Array [
+    Object {
+      "id": "5ec5f60b25fbb049dbd231e2",
+      "name": "频道一",
+    },
+  ],
+  "departmentType": "provider",
+  "displayName": "开单组管理员",
+  "id": "5ec4ec469d87c4387d9350ba",
+  "profilePictureId": "1",
+  "type": "manager",
+  "username": "provider01",
+}
+`;
+
+exports[`user get /api/v1/users/id=me 401 unauthorized 1`] = `
+Object {
+  "code": "888.010.402",
+  "message": "请先登入",
+  "type": "AuthenticationError",
+}
+`;

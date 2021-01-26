@@ -1,0 +1,58 @@
+[
+  {
+    "name": "client",
+    "script": "bin/client-root.js",
+    "error_file": "/var/log/pai-dan-system/client.error.log",
+    "out_file": "/var/log/pai-dan-system/client.log",
+    "exec_mode": "fork",
+    "instances": 1,
+    "watch": false,
+    "merge_logs": true,
+    "autorestart": true,
+    "env": {
+      "NODE_ENV": "production"
+    }
+  },
+  {
+    "name": "management",
+    "script": "bin/management-root.js",
+    "error_file": "/var/log/pai-dan-system/management.error.log",
+    "out_file": "/var/log/pai-dan-system/management.log",
+    "exec_mode": "fork",
+    "instances": 1,
+    "watch": false,
+    "merge_logs": true,
+    "autorestart": true,
+    "env": {
+      "NODE_ENV": "production"
+    }
+  },
+  {
+    "name": "cronjob",
+    "script": "bin/cronjob.js",
+    "error_file": "/var/log/pai-dan-system/cronjob.error.log",
+    "out_file": "/var/log/pai-dan-system/cronjob.log",
+    "exec_mode": "fork",
+    "instances": 1,
+    "watch": false,
+    "merge_logs": true,
+    "autorestart": true,
+    "env": {
+      "NODE_ENV": "production"
+    }
+  },
+  {
+    "name": "task-worker",
+    "script": "bin/task-worker.js",
+    "error_file": "/var/log/pai-dan-system/task-worker.error.log",
+    "out_file": "/var/log/pai-dan-system/task-worker.log",
+    "exec_mode": "fork",
+    "instances": 1,
+    "watch": false,
+    "merge_logs": true,
+    "autorestart": true,
+    "env": {
+      "NODE_ENV": "production"
+    }
+  }
+]

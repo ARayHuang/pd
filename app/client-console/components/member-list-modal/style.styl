@@ -1,0 +1,96 @@
+@import '../../styling/color.styl'
+
+.member-list-modal
+	.ant-modal-close-x
+		display: none
+
+	.ant-modal-content
+		border-radius: 10px
+
+	.ant-modal-header
+		padding: 25px 35px 25px 25px
+		border-bottom: 0
+		border-radius: 10px 10px 0 0
+
+	.ant-modal-title
+		font-weight: 500
+		img
+			position: relative
+			top: -2px
+			margin-right: 8px
+
+	.ant-modal-body
+		padding: 0 35px
+		.list-title
+			font-weight: 500
+			padding: 9px 0 9px 15px
+			background-color: $light-blue5
+			border-bottom: 0
+		.ant-list-split
+			max-height: 360px
+			overflow-y: auto
+
+			.ant-list-item
+				cursor: pointer
+				font-weight: 500
+				padding: 7px 4px 7px 15px
+				border-bottom: 1px solid rgba($black, 0.15)
+				img
+					margin-right: 15px
+		.remind-text--default
+			opacity: 1
+			color: $dark-blue2
+			img
+				margin-right: 4px
+			> div
+				display: flex
+				> div
+					position: relative
+					top: 1px
+					left: 3px
+
+	.ant-modal-footer
+		padding: 30px 35px 16px 35px
+		border-top: 0
+		button + button
+			margin-left: 10px
+
+	&__btn-cancel
+		color: $white
+		border-radius: 6px
+		font-size: 16px
+		width: 88px
+		background-color: $grey
+		border: 0
+		&:hover
+			color: $white
+			background-color: $grey
+
+		&:focus,
+		&:active
+			color: $white
+			background-color: $dark-grey2
+
+	&__btn-ok
+		color: $white
+		border-radius: 6px
+		font-size: 16px
+		width: 88px
+		background-color: $blue
+		border: 0
+		&:hover
+			color: $white
+			background-color: $blue
+
+		&:focus,
+		&:active
+			color: $white
+			background-color: $dark-blue
+
+	.ant-btn-primary[disabled]
+		&,
+		&:hover,
+		&:focus,
+		&:active
+			color: $white
+			background-color: $light-blue2

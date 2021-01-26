@@ -1,0 +1,206 @@
+@import '../../../styling/color.styl'
+@import '../../../styling/button.styl'
+@import '../../../styling/height.styl'
+@import '../../../styling/switch.styl'
+
+$tab-title-color = $light-grey
+$tab-title-active-color = $blue
+$pagination-height = 48px
+$consumer-order-lists-height = $consumer-order-list-track-saving-height + $pagination-height
+
+.consumer-order-list-page
+	background: none
+	padding: 0
+
+	.ljit-layout-content
+		height: "calc(%s - %s)" % ($order-list-total-height $order-list-padding-height)
+		max-height: "calc(%s - %s)" % ($order-list-total-height $order-list-padding-height)
+		min-height: $adjust-screen-min-height - $order-list-padding-height
+		border-radius: 12px
+		background-color: $white
+		@media only screen and (min-height: $adjust-screen-max-height + 1px)
+			max-height: $adjust-screen-max-height - $order-list-padding-height
+
+	&__tabs-list
+		border-bottom-left-radius: 12px
+		border-bottom-right-radius: 12px
+
+		.ant-tabs-bar
+			background-color: $white
+			margin-bottom: 0
+			padding: 15px 24px 0
+			border-top-left-radius: 12px
+			border-top-right-radius: 12px
+			-webkit-backface-visibility: hidden
+		.ant-tabs-content
+			-webkit-backface-visibility: hidden
+
+	&__tabs-title
+		display: flex
+		align-items: center
+
+		.ljit-badge
+			margin-left: 2px
+
+	.ant-tabs-nav
+		width: 100%
+
+	.ant-tabs-tab[role='tab']
+		& + .ant-tabs-tab[role='tab']
+			margin-left: 40px
+
+		&,
+		&.ant-tabs-tab-active
+			margin: 0
+			border-radius: 0
+			border: 0
+			flex: auto
+			font-size: 16px
+			padding: 0 0 14px
+			color: $tab-title-color
+
+	.ljit-tabs > .ant-tabs-bar > .ant-tabs-nav-container > .ant-tabs-nav-wrap > .ant-tabs-nav-scroll > .ant-tabs-nav > div
+		> .ant-tabs-tab:hover,
+		> .ant-tabs-tab-active
+			color: $tab-title-active-color
+
+	.ljit-tabs--inkbar > .ant-tabs-bar > .ant-tabs-nav-container > .ant-tabs-nav-wrap > .ant-tabs-nav-scroll > .ant-tabs-nav > .ant-tabs-ink-bar
+		background-color: $tab-title-active-color
+		height: 4px
+		border-radius: 2px
+
+	&__btn-remove
+		display: flex
+		align-items: center
+		justify-content: center
+		width: 20px
+		height: 20px
+		padding: 0px
+		&, &:focus, &:hover, &:active
+			background: alpha($black, 0)
+
+	.layout__content
+		position: relative
+
+	&__switch
+		position: absolute
+		right: 12px
+		top: 7px
+		color: $text-default-grey
+		font-size: 12px
+		font-weight: 500
+		padding: 12px
+		display: flex
+		align-items: center
+		height: 34px
+		border-left: 1px solid $light-grey20
+
+		> .ljit-switch
+			margin-right: 8px
+
+	.filtered-orders
+		position: relative
+		.list-wrap
+			position: relative
+			overflow-y: inherit
+
+			.ljit-list-item__wrapper
+				padding: 0px
+
+			.ljit-list-item
+				min-width: 671px
+				padding: 6px 20px 2px 20px
+
+			.ant-spin-nested-loading
+				overflow-y: auto
+				max-height: "calc(%s - %s)" % ($order-list-total-height $consumer-order-lists-height)
+				height: "calc(%s - %s)" % ($order-list-total-height $consumer-order-lists-height)
+				min-height: $adjust-screen-min-height - $consumer-order-lists-height
+				margin-bottom: $pagination-height
+				@media only screen and (min-height: $adjust-screen-max-height + 1px)
+					max-height: $adjust-screen-max-height - $consumer-order-lists-height
+
+
+			.ant-list-pagination
+				position: absolute
+				bottom: -1 * $pagination-height
+				width: 100%
+				padding: 11px 11px 11px 0
+				margin-top: 0
+				height: $pagination-height
+				min-height: $pagination-height
+				border-top: 1px solid $ivory-grey3
+				box-shadow: 0 3px 10px 0px alpha($black, 0.2)
+
+		.list-item-wrap
+			display: flex
+			align-items: center
+
+			.has-new-activity
+				position: absolute
+				left: 19px
+			.channel-name
+				margin-left: 10px
+				text-overflow: ellipsis
+				white-space: nowrap
+				max-width: 81px
+				overflow-x: hidden
+
+			.channel-and-read-status
+				width: 78px
+				min-width: 78px
+				display: flex
+				align-items: center
+				.channel-name
+					margin-left: 10px
+					text-overflow: ellipsis
+					white-space: nowrap
+					max-width: 81px
+					overflow-x: hidden
+
+		.ljit-divider
+			height: 46px
+			min-width: 1px
+			margin: 0 8px 0 6px
+			background: $light-grey20
+
+		.list-item-cell
+			padding: 0 5px
+
+			&--tag
+				width: 25%
+				text-align: center
+				&.with-copyable-text
+					min-width: 155px
+					.order-tag
+						width: 77px
+						height: 22px
+						font-size: 12px
+						margin: 0 0 6px 0
+					.copyable-text
+						transform: scale(0.83)
+						-webkit-transform: scale(0.83)
+			&--status
+				width: 43%
+				margin-left: -2em
+
+			&--description
+				color: #6b6b6b
+				line-height: 1.3
+				width: 27%
+				margin-left: -13px
+
+				> div
+					display: flex
+					align-items: center
+					min-width: 164px
+					white-space: nowrap
+
+					span
+						overflow: hidden
+						white-space: nowrap
+						max-width: 146px
+						text-overflow: ellipsis
+
+				.ljit-icon
+					margin-right: 5px

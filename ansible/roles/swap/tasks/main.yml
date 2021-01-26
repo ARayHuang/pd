@@ -1,0 +1,33 @@
+- name: Check if swap file exists
+  stat:
+    path: /swapfile
+  register: swap_file_check
+
+- name: Create 2G swapfile
+  become: yes
+  when: not swap_file_check.stat.exists
+  command: fallocate -l 2G /swapfile
+
+- name: Set permissions on swapfile
+  become: yes
+  when: not swap_file_check.stat.exists
+  file:
+    path: /swapfile
+    mode: 0600
+
+- name: Make swap file
+  become: yes
+  when: not swap_file_check.stat.exists
+  command: mkswap /swapfile
+
+- name: Turn on swap
+  become: yes
+  when: not swap_file_check.stat.exists
+  command: swapon /swapfile
+
+- name: Add to fstab
+  become: yes
+  lineinfile:
+    dest: /etc/fstab
+    regexp: /swapfile
+    line: /swapfile none swap sw 0 0

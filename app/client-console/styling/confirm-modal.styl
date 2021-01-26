@@ -1,0 +1,70 @@
+@import './button.styl'
+
+button-default-setting()
+	width: 88px
+	border: 0
+	border-radius: 5px
+	line-height: 1
+
+.client-container__confirm-modal
+	.ant-modal-close
+		display: none
+
+	.ant-modal-header,
+	.ant-modal-body,
+	.ant-modal-footer
+		border: 0
+
+	.ant-modal-header
+		border-radius: 10px 10px 0 0
+
+	.ant-modal-body
+		padding: 2px 49px 20px
+
+	.ant-modal-content
+		border-radius: 10px
+
+	.ant-modal-footer
+		padding: 12px 25px 16px 25px
+
+	.ant-btn:not(.ant-btn-primary):hover
+		border-color: 0
+		color: rgba(0,0,0,.65)
+
+	.ant-btn
+		font-size: 16px
+
+	.ant-btn-primary
+		button-default-setting()
+		margin-left: 10px
+		background: $btn-blue-background
+		&:hover
+			background: $btn-blue-background-hover
+		&:focus,
+		&:active
+			background: $btn-blue-background-pressed
+		disabled-setting()
+
+	&-title
+		display: flex
+		align-items: center
+		font-size: 16px
+
+		img
+			margin-right: 8px
+
+	&-cancel-btn
+		button-default-setting()
+		color: $white
+		background: $btn-grey-background
+		disabled-setting()
+
+		&.ant-btn:not(.ant-btn-primary)
+			&:hover
+				background: $btn-grey-background-hover
+				color: $white
+			&:focus,
+			&:active
+				background: $btn-grey-background-pressed
+				color: $white
+			disabled-setting()

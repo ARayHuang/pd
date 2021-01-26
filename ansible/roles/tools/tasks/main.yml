@@ -1,0 +1,28 @@
+- name: Update apt packages
+  become: yes
+  apt:
+    update_cache: yes
+
+- name: Install apt package htop
+  become: yes
+  apt:
+    name: htop
+    state: latest
+
+- name: Install apt package httpie
+  become: yes
+  apt:
+    name: httpie
+    state: latest
+
+- name: Install apt package zip
+  become: yes
+  apt:
+    name: zip
+    state: latest
+
+- name: Install apt package unzip
+  become: yes
+  apt:
+    name: unzip
+    state: latest
